@@ -1,0 +1,2622 @@
+[
+    {
+        "id": "7421730237",
+        "type": "CreateEvent",
+        "actor": {
+            "id": 13389526,
+            "login": "iuvbio",
+            "display_login": "iuvbio",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/iuvbio",
+            "avatar_url": "https://avatars.githubusercontent.com/u/13389526?"
+        },
+        "repo": {
+            "id": 126391978,
+            "name": "iuvbio/traderBetty",
+            "url": "https://api.github.com/repos/iuvbio/traderBetty"
+        },
+        "payload": {
+            "ref": null,
+            "ref_type": "repository",
+            "master_branch": "master",
+            "description": "Trading bot for several cryptocurrency exchanges.",
+            "pusher_type": "user"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730227",
+        "type": "PullRequestEvent",
+        "actor": {
+            "id": 352937,
+            "login": "rmarscher",
+            "display_login": "rmarscher",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rmarscher",
+            "avatar_url": "https://avatars.githubusercontent.com/u/352937?"
+        },
+        "repo": {
+            "id": 50903853,
+            "name": "AnalogJ/lexicon",
+            "url": "https://api.github.com/repos/AnalogJ/lexicon"
+        },
+        "payload": {
+            "action": "opened",
+            "number": 196,
+            "pull_request": {
+                "url": "https://api.github.com/repos/AnalogJ/lexicon/pulls/196",
+                "id": 176901635,
+                "html_url": "https://github.com/AnalogJ/lexicon/pull/196",
+                "diff_url": "https://github.com/AnalogJ/lexicon/pull/196.diff",
+                "patch_url": "https://github.com/AnalogJ/lexicon/pull/196.patch",
+                "issue_url": "https://api.github.com/repos/AnalogJ/lexicon/issues/196",
+                "number": 196,
+                "state": "open",
+                "locked": false,
+                "title": "Rackspace handle duplicate record on create",
+                "user": {
+                    "login": "rmarscher",
+                    "id": 352937,
+                    "avatar_url": "https://avatars3.githubusercontent.com/u/352937?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/rmarscher",
+                    "html_url": "https://github.com/rmarscher",
+                    "followers_url": "https://api.github.com/users/rmarscher/followers",
+                    "following_url": "https://api.github.com/users/rmarscher/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/rmarscher/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/rmarscher/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/rmarscher/subscriptions",
+                    "organizations_url": "https://api.github.com/users/rmarscher/orgs",
+                    "repos_url": "https://api.github.com/users/rmarscher/repos",
+                    "events_url": "https://api.github.com/users/rmarscher/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/rmarscher/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "body": "It will now update an existing record if a duplicate exists when\r\ncreating. This also fixes the content filter for listing records. Before\r\nthis commit, we were not sending the content filter to the proper\r\ndata query param documented here:\r\nhttps://developer.rackspace.com/docs/cloud-dns/v1/api-reference/records/#search-records\r\n\r\nHowever, once the param was updated to the right name, Rackspace was\r\nreturning 503 errors for any request that included the data filter.\r\nThis seems to be a bug on Rackspace's end. Also tried sending just\r\na data param without the name param and still received a 503. Also tried\r\nstripping out any non-alphanumeric characters from the content and\r\nstill received a 503 (the docs say: Using special characters in a search\r\n such as \" \" and \"_\" causes no results to be returned). I noted these issues\r\nin pull request #189 and ended up closing that pull request because of the\r\n503 errors.\r\n\r\nTo resolve it, I removed trying to use the content/data filter in the API request.\r\nIt fetches the list filtering on type and name and then applies the content filter\r\non the list in python.\r\n\r\nThank you.",
+                "created_at": "2018-03-22T20:34:24Z",
+                "updated_at": "2018-03-22T20:34:24Z",
+                "closed_at": null,
+                "merged_at": null,
+                "merge_commit_sha": "d1eeb0f86543f3a094a8d34e9245859a2adee755",
+                "assignee": null,
+                "assignees": [],
+                "requested_reviewers": [],
+                "requested_teams": [],
+                "labels": [],
+                "milestone": null,
+                "commits_url": "https://api.github.com/repos/AnalogJ/lexicon/pulls/196/commits",
+                "review_comments_url": "https://api.github.com/repos/AnalogJ/lexicon/pulls/196/comments",
+                "review_comment_url": "https://api.github.com/repos/AnalogJ/lexicon/pulls/comments{/number}",
+                "comments_url": "https://api.github.com/repos/AnalogJ/lexicon/issues/196/comments",
+                "statuses_url": "https://api.github.com/repos/AnalogJ/lexicon/statuses/3e88292dd3946534604bac2c076f362ed3ab2b36",
+                "head": {
+                    "label": "rmarscher:rackspace-update-if-duplicate",
+                    "ref": "rackspace-update-if-duplicate",
+                    "sha": "3e88292dd3946534604bac2c076f362ed3ab2b36",
+                    "user": {
+                        "login": "rmarscher",
+                        "id": 352937,
+                        "avatar_url": "https://avatars3.githubusercontent.com/u/352937?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/rmarscher",
+                        "html_url": "https://github.com/rmarscher",
+                        "followers_url": "https://api.github.com/users/rmarscher/followers",
+                        "following_url": "https://api.github.com/users/rmarscher/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/rmarscher/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/rmarscher/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/rmarscher/subscriptions",
+                        "organizations_url": "https://api.github.com/users/rmarscher/orgs",
+                        "repos_url": "https://api.github.com/users/rmarscher/repos",
+                        "events_url": "https://api.github.com/users/rmarscher/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/rmarscher/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "repo": {
+                        "id": 119716342,
+                        "name": "lexicon",
+                        "full_name": "rmarscher/lexicon",
+                        "owner": {
+                            "login": "rmarscher",
+                            "id": 352937,
+                            "avatar_url": "https://avatars3.githubusercontent.com/u/352937?v=4",
+                            "gravatar_id": "",
+                            "url": "https://api.github.com/users/rmarscher",
+                            "html_url": "https://github.com/rmarscher",
+                            "followers_url": "https://api.github.com/users/rmarscher/followers",
+                            "following_url": "https://api.github.com/users/rmarscher/following{/other_user}",
+                            "gists_url": "https://api.github.com/users/rmarscher/gists{/gist_id}",
+                            "starred_url": "https://api.github.com/users/rmarscher/starred{/owner}{/repo}",
+                            "subscriptions_url": "https://api.github.com/users/rmarscher/subscriptions",
+                            "organizations_url": "https://api.github.com/users/rmarscher/orgs",
+                            "repos_url": "https://api.github.com/users/rmarscher/repos",
+                            "events_url": "https://api.github.com/users/rmarscher/events{/privacy}",
+                            "received_events_url": "https://api.github.com/users/rmarscher/received_events",
+                            "type": "User",
+                            "site_admin": false
+                        },
+                        "private": false,
+                        "html_url": "https://github.com/rmarscher/lexicon",
+                        "description": "Manipulate DNS records on various DNS providers in a standardized way. ",
+                        "fork": true,
+                        "url": "https://api.github.com/repos/rmarscher/lexicon",
+                        "forks_url": "https://api.github.com/repos/rmarscher/lexicon/forks",
+                        "keys_url": "https://api.github.com/repos/rmarscher/lexicon/keys{/key_id}",
+                        "collaborators_url": "https://api.github.com/repos/rmarscher/lexicon/collaborators{/collaborator}",
+                        "teams_url": "https://api.github.com/repos/rmarscher/lexicon/teams",
+                        "hooks_url": "https://api.github.com/repos/rmarscher/lexicon/hooks",
+                        "issue_events_url": "https://api.github.com/repos/rmarscher/lexicon/issues/events{/number}",
+                        "events_url": "https://api.github.com/repos/rmarscher/lexicon/events",
+                        "assignees_url": "https://api.github.com/repos/rmarscher/lexicon/assignees{/user}",
+                        "branches_url": "https://api.github.com/repos/rmarscher/lexicon/branches{/branch}",
+                        "tags_url": "https://api.github.com/repos/rmarscher/lexicon/tags",
+                        "blobs_url": "https://api.github.com/repos/rmarscher/lexicon/git/blobs{/sha}",
+                        "git_tags_url": "https://api.github.com/repos/rmarscher/lexicon/git/tags{/sha}",
+                        "git_refs_url": "https://api.github.com/repos/rmarscher/lexicon/git/refs{/sha}",
+                        "trees_url": "https://api.github.com/repos/rmarscher/lexicon/git/trees{/sha}",
+                        "statuses_url": "https://api.github.com/repos/rmarscher/lexicon/statuses/{sha}",
+                        "languages_url": "https://api.github.com/repos/rmarscher/lexicon/languages",
+                        "stargazers_url": "https://api.github.com/repos/rmarscher/lexicon/stargazers",
+                        "contributors_url": "https://api.github.com/repos/rmarscher/lexicon/contributors",
+                        "subscribers_url": "https://api.github.com/repos/rmarscher/lexicon/subscribers",
+                        "subscription_url": "https://api.github.com/repos/rmarscher/lexicon/subscription",
+                        "commits_url": "https://api.github.com/repos/rmarscher/lexicon/commits{/sha}",
+                        "git_commits_url": "https://api.github.com/repos/rmarscher/lexicon/git/commits{/sha}",
+                        "comments_url": "https://api.github.com/repos/rmarscher/lexicon/comments{/number}",
+                        "issue_comment_url": "https://api.github.com/repos/rmarscher/lexicon/issues/comments{/number}",
+                        "contents_url": "https://api.github.com/repos/rmarscher/lexicon/contents/{+path}",
+                        "compare_url": "https://api.github.com/repos/rmarscher/lexicon/compare/{base}...{head}",
+                        "merges_url": "https://api.github.com/repos/rmarscher/lexicon/merges",
+                        "archive_url": "https://api.github.com/repos/rmarscher/lexicon/{archive_format}{/ref}",
+                        "downloads_url": "https://api.github.com/repos/rmarscher/lexicon/downloads",
+                        "issues_url": "https://api.github.com/repos/rmarscher/lexicon/issues{/number}",
+                        "pulls_url": "https://api.github.com/repos/rmarscher/lexicon/pulls{/number}",
+                        "milestones_url": "https://api.github.com/repos/rmarscher/lexicon/milestones{/number}",
+                        "notifications_url": "https://api.github.com/repos/rmarscher/lexicon/notifications{?since,all,participating}",
+                        "labels_url": "https://api.github.com/repos/rmarscher/lexicon/labels{/name}",
+                        "releases_url": "https://api.github.com/repos/rmarscher/lexicon/releases{/id}",
+                        "deployments_url": "https://api.github.com/repos/rmarscher/lexicon/deployments",
+                        "created_at": "2018-01-31T16:57:38Z",
+                        "updated_at": "2018-01-31T16:57:40Z",
+                        "pushed_at": "2018-03-22T20:30:29Z",
+                        "git_url": "git://github.com/rmarscher/lexicon.git",
+                        "ssh_url": "git@github.com:rmarscher/lexicon.git",
+                        "clone_url": "https://github.com/rmarscher/lexicon.git",
+                        "svn_url": "https://github.com/rmarscher/lexicon",
+                        "homepage": "",
+                        "size": 826,
+                        "stargazers_count": 0,
+                        "watchers_count": 0,
+                        "language": "Python",
+                        "has_issues": false,
+                        "has_projects": true,
+                        "has_downloads": true,
+                        "has_wiki": true,
+                        "has_pages": false,
+                        "forks_count": 0,
+                        "mirror_url": null,
+                        "archived": false,
+                        "open_issues_count": 0,
+                        "license": null,
+                        "forks": 0,
+                        "open_issues": 0,
+                        "watchers": 0,
+                        "default_branch": "master"
+                    }
+                },
+                "base": {
+                    "label": "AnalogJ:master",
+                    "ref": "master",
+                    "sha": "a1f5fcdb210db2f29ca3e59e01afd5862744ebde",
+                    "user": {
+                        "login": "AnalogJ",
+                        "id": 891875,
+                        "avatar_url": "https://avatars1.githubusercontent.com/u/891875?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/AnalogJ",
+                        "html_url": "https://github.com/AnalogJ",
+                        "followers_url": "https://api.github.com/users/AnalogJ/followers",
+                        "following_url": "https://api.github.com/users/AnalogJ/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/AnalogJ/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/AnalogJ/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/AnalogJ/subscriptions",
+                        "organizations_url": "https://api.github.com/users/AnalogJ/orgs",
+                        "repos_url": "https://api.github.com/users/AnalogJ/repos",
+                        "events_url": "https://api.github.com/users/AnalogJ/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/AnalogJ/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "repo": {
+                        "id": 50903853,
+                        "name": "lexicon",
+                        "full_name": "AnalogJ/lexicon",
+                        "owner": {
+                            "login": "AnalogJ",
+                            "id": 891875,
+                            "avatar_url": "https://avatars1.githubusercontent.com/u/891875?v=4",
+                            "gravatar_id": "",
+                            "url": "https://api.github.com/users/AnalogJ",
+                            "html_url": "https://github.com/AnalogJ",
+                            "followers_url": "https://api.github.com/users/AnalogJ/followers",
+                            "following_url": "https://api.github.com/users/AnalogJ/following{/other_user}",
+                            "gists_url": "https://api.github.com/users/AnalogJ/gists{/gist_id}",
+                            "starred_url": "https://api.github.com/users/AnalogJ/starred{/owner}{/repo}",
+                            "subscriptions_url": "https://api.github.com/users/AnalogJ/subscriptions",
+                            "organizations_url": "https://api.github.com/users/AnalogJ/orgs",
+                            "repos_url": "https://api.github.com/users/AnalogJ/repos",
+                            "events_url": "https://api.github.com/users/AnalogJ/events{/privacy}",
+                            "received_events_url": "https://api.github.com/users/AnalogJ/received_events",
+                            "type": "User",
+                            "site_admin": false
+                        },
+                        "private": false,
+                        "html_url": "https://github.com/AnalogJ/lexicon",
+                        "description": "Manipulate DNS records on various DNS providers in a standardized way. ",
+                        "fork": false,
+                        "url": "https://api.github.com/repos/AnalogJ/lexicon",
+                        "forks_url": "https://api.github.com/repos/AnalogJ/lexicon/forks",
+                        "keys_url": "https://api.github.com/repos/AnalogJ/lexicon/keys{/key_id}",
+                        "collaborators_url": "https://api.github.com/repos/AnalogJ/lexicon/collaborators{/collaborator}",
+                        "teams_url": "https://api.github.com/repos/AnalogJ/lexicon/teams",
+                        "hooks_url": "https://api.github.com/repos/AnalogJ/lexicon/hooks",
+                        "issue_events_url": "https://api.github.com/repos/AnalogJ/lexicon/issues/events{/number}",
+                        "events_url": "https://api.github.com/repos/AnalogJ/lexicon/events",
+                        "assignees_url": "https://api.github.com/repos/AnalogJ/lexicon/assignees{/user}",
+                        "branches_url": "https://api.github.com/repos/AnalogJ/lexicon/branches{/branch}",
+                        "tags_url": "https://api.github.com/repos/AnalogJ/lexicon/tags",
+                        "blobs_url": "https://api.github.com/repos/AnalogJ/lexicon/git/blobs{/sha}",
+                        "git_tags_url": "https://api.github.com/repos/AnalogJ/lexicon/git/tags{/sha}",
+                        "git_refs_url": "https://api.github.com/repos/AnalogJ/lexicon/git/refs{/sha}",
+                        "trees_url": "https://api.github.com/repos/AnalogJ/lexicon/git/trees{/sha}",
+                        "statuses_url": "https://api.github.com/repos/AnalogJ/lexicon/statuses/{sha}",
+                        "languages_url": "https://api.github.com/repos/AnalogJ/lexicon/languages",
+                        "stargazers_url": "https://api.github.com/repos/AnalogJ/lexicon/stargazers",
+                        "contributors_url": "https://api.github.com/repos/AnalogJ/lexicon/contributors",
+                        "subscribers_url": "https://api.github.com/repos/AnalogJ/lexicon/subscribers",
+                        "subscription_url": "https://api.github.com/repos/AnalogJ/lexicon/subscription",
+                        "commits_url": "https://api.github.com/repos/AnalogJ/lexicon/commits{/sha}",
+                        "git_commits_url": "https://api.github.com/repos/AnalogJ/lexicon/git/commits{/sha}",
+                        "comments_url": "https://api.github.com/repos/AnalogJ/lexicon/comments{/number}",
+                        "issue_comment_url": "https://api.github.com/repos/AnalogJ/lexicon/issues/comments{/number}",
+                        "contents_url": "https://api.github.com/repos/AnalogJ/lexicon/contents/{+path}",
+                        "compare_url": "https://api.github.com/repos/AnalogJ/lexicon/compare/{base}...{head}",
+                        "merges_url": "https://api.github.com/repos/AnalogJ/lexicon/merges",
+                        "archive_url": "https://api.github.com/repos/AnalogJ/lexicon/{archive_format}{/ref}",
+                        "downloads_url": "https://api.github.com/repos/AnalogJ/lexicon/downloads",
+                        "issues_url": "https://api.github.com/repos/AnalogJ/lexicon/issues{/number}",
+                        "pulls_url": "https://api.github.com/repos/AnalogJ/lexicon/pulls{/number}",
+                        "milestones_url": "https://api.github.com/repos/AnalogJ/lexicon/milestones{/number}",
+                        "notifications_url": "https://api.github.com/repos/AnalogJ/lexicon/notifications{?since,all,participating}",
+                        "labels_url": "https://api.github.com/repos/AnalogJ/lexicon/labels{/name}",
+                        "releases_url": "https://api.github.com/repos/AnalogJ/lexicon/releases{/id}",
+                        "deployments_url": "https://api.github.com/repos/AnalogJ/lexicon/deployments",
+                        "created_at": "2016-02-02T07:53:04Z",
+                        "updated_at": "2018-03-22T17:55:05Z",
+                        "pushed_at": "2018-03-22T20:34:25Z",
+                        "git_url": "git://github.com/AnalogJ/lexicon.git",
+                        "ssh_url": "git@github.com:AnalogJ/lexicon.git",
+                        "clone_url": "https://github.com/AnalogJ/lexicon.git",
+                        "svn_url": "https://github.com/AnalogJ/lexicon",
+                        "homepage": "",
+                        "size": 947,
+                        "stargazers_count": 288,
+                        "watchers_count": 288,
+                        "language": "Python",
+                        "has_issues": true,
+                        "has_projects": true,
+                        "has_downloads": true,
+                        "has_wiki": true,
+                        "has_pages": false,
+                        "forks_count": 90,
+                        "mirror_url": null,
+                        "archived": false,
+                        "open_issues_count": 15,
+                        "license": {
+                            "key": "mit",
+                            "name": "MIT License",
+                            "spdx_id": "MIT",
+                            "url": "https://api.github.com/licenses/mit"
+                        },
+                        "forks": 90,
+                        "open_issues": 15,
+                        "watchers": 288,
+                        "default_branch": "master"
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/pulls/196"
+                    },
+                    "html": {
+                        "href": "https://github.com/AnalogJ/lexicon/pull/196"
+                    },
+                    "issue": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/issues/196"
+                    },
+                    "comments": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/issues/196/comments"
+                    },
+                    "review_comments": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/pulls/196/comments"
+                    },
+                    "review_comment": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/pulls/comments{/number}"
+                    },
+                    "commits": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/pulls/196/commits"
+                    },
+                    "statuses": {
+                        "href": "https://api.github.com/repos/AnalogJ/lexicon/statuses/3e88292dd3946534604bac2c076f362ed3ab2b36"
+                    }
+                },
+                "author_association": "CONTRIBUTOR",
+                "merged": false,
+                "mergeable": true,
+                "rebaseable": true,
+                "mergeable_state": "unstable",
+                "merged_by": null,
+                "comments": 0,
+                "review_comments": 0,
+                "maintainer_can_modify": true,
+                "commits": 1,
+                "additions": 34,
+                "deletions": 40,
+                "changed_files": 5
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730222",
+        "type": "PushEvent",
+        "actor": {
+            "id": 15186388,
+            "login": "edfeitosa",
+            "display_login": "edfeitosa",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/edfeitosa",
+            "avatar_url": "https://avatars.githubusercontent.com/u/15186388?"
+        },
+        "repo": {
+            "id": 125561980,
+            "name": "Kiriyama8/adminlte-angular4",
+            "url": "https://api.github.com/repos/Kiriyama8/adminlte-angular4"
+        },
+        "payload": {
+            "push_id": 2425523886,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/DEV-edfeitosa",
+            "head": "db3c705a0e4f9a10b00c87b733ff3638939bc201",
+            "before": "9ae612627a12a38c0cea50913ab56f33d7744666",
+            "commits": [
+                {
+                    "sha": "db3c705a0e4f9a10b00c87b733ff3638939bc201",
+                    "author": {
+                        "email": "eduardofeitosadg@gmail.com",
+                        "name": "Eduardo Feitosa"
+                    },
+                    "message": "Componentes base do sistema Serveloja - Login, controles de acesso, estrtura de diretórios",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/Kiriyama8/adminlte-angular4/commits/db3c705a0e4f9a10b00c87b733ff3638939bc201"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730216",
+        "type": "PushEvent",
+        "actor": {
+            "id": 26676898,
+            "login": "CalebLBaker",
+            "display_login": "CalebLBaker",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CalebLBaker",
+            "avatar_url": "https://avatars.githubusercontent.com/u/26676898?"
+        },
+        "repo": {
+            "id": 126100528,
+            "name": "CalebLBaker/CMinusParser",
+            "url": "https://api.github.com/repos/CalebLBaker/CMinusParser"
+        },
+        "payload": {
+            "push_id": 2425523837,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "13cfe38e27b320679aa36ffa80f0e96fb7d5a7dd",
+            "before": "faa765df0a05a6cfe23b84c3843af48d2b68744a",
+            "commits": [
+                {
+                    "sha": "13cfe38e27b320679aa36ffa80f0e96fb7d5a7dd",
+                    "author": {
+                        "email": "caleblbaker@cedarville.edu",
+                        "name": "CalebLBaker"
+                    },
+                    "message": "Fixed bug in parseExpressionStmt",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/CalebLBaker/CMinusParser/commits/13cfe38e27b320679aa36ffa80f0e96fb7d5a7dd"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730213",
+        "type": "CreateEvent",
+        "actor": {
+            "id": 29170904,
+            "login": "hastorga",
+            "display_login": "hastorga",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hastorga",
+            "avatar_url": "https://avatars.githubusercontent.com/u/29170904?"
+        },
+        "repo": {
+            "id": 126391980,
+            "name": "hastorga/servidor_python",
+            "url": "https://api.github.com/repos/hastorga/servidor_python"
+        },
+        "payload": {
+            "ref": null,
+            "ref_type": "repository",
+            "master_branch": "master",
+            "description": null,
+            "pusher_type": "user"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730208",
+        "type": "CreateEvent",
+        "actor": {
+            "id": 18294988,
+            "login": "devmecha",
+            "display_login": "devmecha",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/devmecha",
+            "avatar_url": "https://avatars.githubusercontent.com/u/18294988?"
+        },
+        "repo": {
+            "id": 126391716,
+            "name": "devmecha/Example_Ionic3_-Angular-5",
+            "url": "https://api.github.com/repos/devmecha/Example_Ionic3_-Angular-5"
+        },
+        "payload": {
+            "ref": "master",
+            "ref_type": "branch",
+            "master_branch": "master",
+            "description": "Example App using Ionic 3 with Angular 5",
+            "pusher_type": "user"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730199",
+        "type": "IssuesEvent",
+        "actor": {
+            "id": 9300702,
+            "login": "cnasc",
+            "display_login": "cnasc",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/cnasc",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9300702?"
+        },
+        "repo": {
+            "id": 65159560,
+            "name": "bakpakin/Fennel",
+            "url": "https://api.github.com/repos/bakpakin/Fennel"
+        },
+        "payload": {
+            "action": "opened",
+            "issue": {
+                "url": "https://api.github.com/repos/bakpakin/Fennel/issues/44",
+                "repository_url": "https://api.github.com/repos/bakpakin/Fennel",
+                "labels_url": "https://api.github.com/repos/bakpakin/Fennel/issues/44/labels{/name}",
+                "comments_url": "https://api.github.com/repos/bakpakin/Fennel/issues/44/comments",
+                "events_url": "https://api.github.com/repos/bakpakin/Fennel/issues/44/events",
+                "html_url": "https://github.com/bakpakin/Fennel/issues/44",
+                "id": 307804437,
+                "number": 44,
+                "title": "fennel.searcher \"fennel.lua:1366: attempt to index a string value (local 'options')\"",
+                "user": {
+                    "login": "cnasc",
+                    "id": 9300702,
+                    "avatar_url": "https://avatars3.githubusercontent.com/u/9300702?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/cnasc",
+                    "html_url": "https://github.com/cnasc",
+                    "followers_url": "https://api.github.com/users/cnasc/followers",
+                    "following_url": "https://api.github.com/users/cnasc/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/cnasc/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/cnasc/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/cnasc/subscriptions",
+                    "organizations_url": "https://api.github.com/users/cnasc/orgs",
+                    "repos_url": "https://api.github.com/users/cnasc/repos",
+                    "events_url": "https://api.github.com/users/cnasc/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/cnasc/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "labels": [],
+                "state": "open",
+                "locked": false,
+                "assignee": null,
+                "assignees": [],
+                "milestone": null,
+                "comments": 0,
+                "created_at": "2018-03-22T20:34:24Z",
+                "updated_at": "2018-03-22T20:34:24Z",
+                "closed_at": null,
+                "author_association": "NONE",
+                "body": "My environment: Lua 5.3.4 on MacOS 10.13.3\r\n\r\n`fennel.searcher` returns a function that takes an options table, then calls `fennel_dofile` with the filename and the options. However, `require` passes the name of the module rather than options. \r\n\r\nhttps://github.com/bakpakin/Fennel/blob/1c46182e5838f5d4e9885fe5c39074b68b0f7fba/fennel.lua#L1361-L1368\r\n\r\nSo for example, when I run:\r\n```\r\n;; File: require-test.fnl\r\n;; Env: fennel.lua and helpers.fnl are in same directory\r\n\r\n(set fennel (require :fennel))\r\n(table.insert package.searchers fennel.searcher)\r\n(set helpers (require :helpers))\r\n```\r\n\r\n`fennel_dofile` ends up being called like `fennel_dofile(\"./helpers.fnl\", \"helpers\")`. This results in an error when the code tries to set `options.filename`, so the require fails. This may be due to a difference in the way `require` works in Lua 5.1 and in 5.2+.\r\n\r\nFrom the Lua 5.1 manual:\r\n> Once a loader is found, require calls the loader with a single argument, modname.\r\n\r\nFrom the Lua 5.2 manual (same in 5.3):\r\n> Once a loader is found, require calls the loader with two arguments: modname and an extra value dependent on how it got the loader. (If the loader came from a file, this extra value is the file name.)\r\n\r\nThat said, I'm a bit puzzled because it seems from those descriptions that the loader will always be called with a string value, so it should also error on 5.1. (Just assuming that it works on 5.1 because the package.loaders used in the documentation becomes package.searchers in 5.2+)"
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730200",
+        "type": "PushEvent",
+        "actor": {
+            "id": 36632633,
+            "login": "nikitaRag",
+            "display_login": "nikitaRag",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nikitaRag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/36632633?"
+        },
+        "repo": {
+            "id": 126373282,
+            "name": "nikitaRag/Hard-drive-store",
+            "url": "https://api.github.com/repos/nikitaRag/Hard-drive-store"
+        },
+        "payload": {
+            "push_id": 2425523800,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "969f6326f5c075b9242537505c9253ba2d5677fc",
+            "before": "921d9e653b6d22fbec298c33fc8c49b2b967a6c1",
+            "commits": [
+                {
+                    "sha": "969f6326f5c075b9242537505c9253ba2d5677fc",
+                    "author": {
+                        "email": "36632633+nikitaRag@users.noreply.github.com",
+                        "name": "nikitaRag"
+                    },
+                    "message": "Create README",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/nikitaRag/Hard-drive-store/commits/969f6326f5c075b9242537505c9253ba2d5677fc"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730198",
+        "type": "PullRequestEvent",
+        "actor": {
+            "id": 37664276,
+            "login": "SaddleGeek",
+            "display_login": "SaddleGeek",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SaddleGeek",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37664276?"
+        },
+        "repo": {
+            "id": 126390274,
+            "name": "SaddleGeek/hello-world",
+            "url": "https://api.github.com/repos/SaddleGeek/hello-world"
+        },
+        "payload": {
+            "action": "opened",
+            "number": 1,
+            "pull_request": {
+                "url": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/1",
+                "id": 176901652,
+                "html_url": "https://github.com/SaddleGeek/hello-world/pull/1",
+                "diff_url": "https://github.com/SaddleGeek/hello-world/pull/1.diff",
+                "patch_url": "https://github.com/SaddleGeek/hello-world/pull/1.patch",
+                "issue_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues/1",
+                "number": 1,
+                "state": "open",
+                "locked": false,
+                "title": "Update README.md",
+                "user": {
+                    "login": "SaddleGeek",
+                    "id": 37664276,
+                    "avatar_url": "https://avatars1.githubusercontent.com/u/37664276?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/SaddleGeek",
+                    "html_url": "https://github.com/SaddleGeek",
+                    "followers_url": "https://api.github.com/users/SaddleGeek/followers",
+                    "following_url": "https://api.github.com/users/SaddleGeek/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/SaddleGeek/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/SaddleGeek/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/SaddleGeek/subscriptions",
+                    "organizations_url": "https://api.github.com/users/SaddleGeek/orgs",
+                    "repos_url": "https://api.github.com/users/SaddleGeek/repos",
+                    "events_url": "https://api.github.com/users/SaddleGeek/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/SaddleGeek/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "body": "First update to readme-edits process.",
+                "created_at": "2018-03-22T20:34:27Z",
+                "updated_at": "2018-03-22T20:34:27Z",
+                "closed_at": null,
+                "merged_at": null,
+                "merge_commit_sha": null,
+                "assignee": null,
+                "assignees": [],
+                "requested_reviewers": [],
+                "requested_teams": [],
+                "labels": [],
+                "milestone": null,
+                "commits_url": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/1/commits",
+                "review_comments_url": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/1/comments",
+                "review_comment_url": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/comments{/number}",
+                "comments_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues/1/comments",
+                "statuses_url": "https://api.github.com/repos/SaddleGeek/hello-world/statuses/34acbe03812a637d4ba74cc2da2bf889ac8a8a56",
+                "head": {
+                    "label": "SaddleGeek:readme-edits",
+                    "ref": "readme-edits",
+                    "sha": "34acbe03812a637d4ba74cc2da2bf889ac8a8a56",
+                    "user": {
+                        "login": "SaddleGeek",
+                        "id": 37664276,
+                        "avatar_url": "https://avatars1.githubusercontent.com/u/37664276?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/SaddleGeek",
+                        "html_url": "https://github.com/SaddleGeek",
+                        "followers_url": "https://api.github.com/users/SaddleGeek/followers",
+                        "following_url": "https://api.github.com/users/SaddleGeek/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/SaddleGeek/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/SaddleGeek/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/SaddleGeek/subscriptions",
+                        "organizations_url": "https://api.github.com/users/SaddleGeek/orgs",
+                        "repos_url": "https://api.github.com/users/SaddleGeek/repos",
+                        "events_url": "https://api.github.com/users/SaddleGeek/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/SaddleGeek/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "repo": {
+                        "id": 126390274,
+                        "name": "hello-world",
+                        "full_name": "SaddleGeek/hello-world",
+                        "owner": {
+                            "login": "SaddleGeek",
+                            "id": 37664276,
+                            "avatar_url": "https://avatars1.githubusercontent.com/u/37664276?v=4",
+                            "gravatar_id": "",
+                            "url": "https://api.github.com/users/SaddleGeek",
+                            "html_url": "https://github.com/SaddleGeek",
+                            "followers_url": "https://api.github.com/users/SaddleGeek/followers",
+                            "following_url": "https://api.github.com/users/SaddleGeek/following{/other_user}",
+                            "gists_url": "https://api.github.com/users/SaddleGeek/gists{/gist_id}",
+                            "starred_url": "https://api.github.com/users/SaddleGeek/starred{/owner}{/repo}",
+                            "subscriptions_url": "https://api.github.com/users/SaddleGeek/subscriptions",
+                            "organizations_url": "https://api.github.com/users/SaddleGeek/orgs",
+                            "repos_url": "https://api.github.com/users/SaddleGeek/repos",
+                            "events_url": "https://api.github.com/users/SaddleGeek/events{/privacy}",
+                            "received_events_url": "https://api.github.com/users/SaddleGeek/received_events",
+                            "type": "User",
+                            "site_admin": false
+                        },
+                        "private": false,
+                        "html_url": "https://github.com/SaddleGeek/hello-world",
+                        "description": "First GitHub repository.",
+                        "fork": false,
+                        "url": "https://api.github.com/repos/SaddleGeek/hello-world",
+                        "forks_url": "https://api.github.com/repos/SaddleGeek/hello-world/forks",
+                        "keys_url": "https://api.github.com/repos/SaddleGeek/hello-world/keys{/key_id}",
+                        "collaborators_url": "https://api.github.com/repos/SaddleGeek/hello-world/collaborators{/collaborator}",
+                        "teams_url": "https://api.github.com/repos/SaddleGeek/hello-world/teams",
+                        "hooks_url": "https://api.github.com/repos/SaddleGeek/hello-world/hooks",
+                        "issue_events_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues/events{/number}",
+                        "events_url": "https://api.github.com/repos/SaddleGeek/hello-world/events",
+                        "assignees_url": "https://api.github.com/repos/SaddleGeek/hello-world/assignees{/user}",
+                        "branches_url": "https://api.github.com/repos/SaddleGeek/hello-world/branches{/branch}",
+                        "tags_url": "https://api.github.com/repos/SaddleGeek/hello-world/tags",
+                        "blobs_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/blobs{/sha}",
+                        "git_tags_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/tags{/sha}",
+                        "git_refs_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/refs{/sha}",
+                        "trees_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/trees{/sha}",
+                        "statuses_url": "https://api.github.com/repos/SaddleGeek/hello-world/statuses/{sha}",
+                        "languages_url": "https://api.github.com/repos/SaddleGeek/hello-world/languages",
+                        "stargazers_url": "https://api.github.com/repos/SaddleGeek/hello-world/stargazers",
+                        "contributors_url": "https://api.github.com/repos/SaddleGeek/hello-world/contributors",
+                        "subscribers_url": "https://api.github.com/repos/SaddleGeek/hello-world/subscribers",
+                        "subscription_url": "https://api.github.com/repos/SaddleGeek/hello-world/subscription",
+                        "commits_url": "https://api.github.com/repos/SaddleGeek/hello-world/commits{/sha}",
+                        "git_commits_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/commits{/sha}",
+                        "comments_url": "https://api.github.com/repos/SaddleGeek/hello-world/comments{/number}",
+                        "issue_comment_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues/comments{/number}",
+                        "contents_url": "https://api.github.com/repos/SaddleGeek/hello-world/contents/{+path}",
+                        "compare_url": "https://api.github.com/repos/SaddleGeek/hello-world/compare/{base}...{head}",
+                        "merges_url": "https://api.github.com/repos/SaddleGeek/hello-world/merges",
+                        "archive_url": "https://api.github.com/repos/SaddleGeek/hello-world/{archive_format}{/ref}",
+                        "downloads_url": "https://api.github.com/repos/SaddleGeek/hello-world/downloads",
+                        "issues_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues{/number}",
+                        "pulls_url": "https://api.github.com/repos/SaddleGeek/hello-world/pulls{/number}",
+                        "milestones_url": "https://api.github.com/repos/SaddleGeek/hello-world/milestones{/number}",
+                        "notifications_url": "https://api.github.com/repos/SaddleGeek/hello-world/notifications{?since,all,participating}",
+                        "labels_url": "https://api.github.com/repos/SaddleGeek/hello-world/labels{/name}",
+                        "releases_url": "https://api.github.com/repos/SaddleGeek/hello-world/releases{/id}",
+                        "deployments_url": "https://api.github.com/repos/SaddleGeek/hello-world/deployments",
+                        "created_at": "2018-03-22T20:17:17Z",
+                        "updated_at": "2018-03-22T20:17:20Z",
+                        "pushed_at": "2018-03-22T20:21:58Z",
+                        "git_url": "git://github.com/SaddleGeek/hello-world.git",
+                        "ssh_url": "git@github.com:SaddleGeek/hello-world.git",
+                        "clone_url": "https://github.com/SaddleGeek/hello-world.git",
+                        "svn_url": "https://github.com/SaddleGeek/hello-world",
+                        "homepage": null,
+                        "size": 0,
+                        "stargazers_count": 0,
+                        "watchers_count": 0,
+                        "language": null,
+                        "has_issues": true,
+                        "has_projects": true,
+                        "has_downloads": true,
+                        "has_wiki": true,
+                        "has_pages": false,
+                        "forks_count": 0,
+                        "mirror_url": null,
+                        "archived": false,
+                        "open_issues_count": 1,
+                        "license": null,
+                        "forks": 0,
+                        "open_issues": 1,
+                        "watchers": 0,
+                        "default_branch": "master"
+                    }
+                },
+                "base": {
+                    "label": "SaddleGeek:master",
+                    "ref": "master",
+                    "sha": "b0fad9872ada1de808cd0c56ab6e8dd8d0de6bda",
+                    "user": {
+                        "login": "SaddleGeek",
+                        "id": 37664276,
+                        "avatar_url": "https://avatars1.githubusercontent.com/u/37664276?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/SaddleGeek",
+                        "html_url": "https://github.com/SaddleGeek",
+                        "followers_url": "https://api.github.com/users/SaddleGeek/followers",
+                        "following_url": "https://api.github.com/users/SaddleGeek/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/SaddleGeek/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/SaddleGeek/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/SaddleGeek/subscriptions",
+                        "organizations_url": "https://api.github.com/users/SaddleGeek/orgs",
+                        "repos_url": "https://api.github.com/users/SaddleGeek/repos",
+                        "events_url": "https://api.github.com/users/SaddleGeek/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/SaddleGeek/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "repo": {
+                        "id": 126390274,
+                        "name": "hello-world",
+                        "full_name": "SaddleGeek/hello-world",
+                        "owner": {
+                            "login": "SaddleGeek",
+                            "id": 37664276,
+                            "avatar_url": "https://avatars1.githubusercontent.com/u/37664276?v=4",
+                            "gravatar_id": "",
+                            "url": "https://api.github.com/users/SaddleGeek",
+                            "html_url": "https://github.com/SaddleGeek",
+                            "followers_url": "https://api.github.com/users/SaddleGeek/followers",
+                            "following_url": "https://api.github.com/users/SaddleGeek/following{/other_user}",
+                            "gists_url": "https://api.github.com/users/SaddleGeek/gists{/gist_id}",
+                            "starred_url": "https://api.github.com/users/SaddleGeek/starred{/owner}{/repo}",
+                            "subscriptions_url": "https://api.github.com/users/SaddleGeek/subscriptions",
+                            "organizations_url": "https://api.github.com/users/SaddleGeek/orgs",
+                            "repos_url": "https://api.github.com/users/SaddleGeek/repos",
+                            "events_url": "https://api.github.com/users/SaddleGeek/events{/privacy}",
+                            "received_events_url": "https://api.github.com/users/SaddleGeek/received_events",
+                            "type": "User",
+                            "site_admin": false
+                        },
+                        "private": false,
+                        "html_url": "https://github.com/SaddleGeek/hello-world",
+                        "description": "First GitHub repository.",
+                        "fork": false,
+                        "url": "https://api.github.com/repos/SaddleGeek/hello-world",
+                        "forks_url": "https://api.github.com/repos/SaddleGeek/hello-world/forks",
+                        "keys_url": "https://api.github.com/repos/SaddleGeek/hello-world/keys{/key_id}",
+                        "collaborators_url": "https://api.github.com/repos/SaddleGeek/hello-world/collaborators{/collaborator}",
+                        "teams_url": "https://api.github.com/repos/SaddleGeek/hello-world/teams",
+                        "hooks_url": "https://api.github.com/repos/SaddleGeek/hello-world/hooks",
+                        "issue_events_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues/events{/number}",
+                        "events_url": "https://api.github.com/repos/SaddleGeek/hello-world/events",
+                        "assignees_url": "https://api.github.com/repos/SaddleGeek/hello-world/assignees{/user}",
+                        "branches_url": "https://api.github.com/repos/SaddleGeek/hello-world/branches{/branch}",
+                        "tags_url": "https://api.github.com/repos/SaddleGeek/hello-world/tags",
+                        "blobs_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/blobs{/sha}",
+                        "git_tags_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/tags{/sha}",
+                        "git_refs_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/refs{/sha}",
+                        "trees_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/trees{/sha}",
+                        "statuses_url": "https://api.github.com/repos/SaddleGeek/hello-world/statuses/{sha}",
+                        "languages_url": "https://api.github.com/repos/SaddleGeek/hello-world/languages",
+                        "stargazers_url": "https://api.github.com/repos/SaddleGeek/hello-world/stargazers",
+                        "contributors_url": "https://api.github.com/repos/SaddleGeek/hello-world/contributors",
+                        "subscribers_url": "https://api.github.com/repos/SaddleGeek/hello-world/subscribers",
+                        "subscription_url": "https://api.github.com/repos/SaddleGeek/hello-world/subscription",
+                        "commits_url": "https://api.github.com/repos/SaddleGeek/hello-world/commits{/sha}",
+                        "git_commits_url": "https://api.github.com/repos/SaddleGeek/hello-world/git/commits{/sha}",
+                        "comments_url": "https://api.github.com/repos/SaddleGeek/hello-world/comments{/number}",
+                        "issue_comment_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues/comments{/number}",
+                        "contents_url": "https://api.github.com/repos/SaddleGeek/hello-world/contents/{+path}",
+                        "compare_url": "https://api.github.com/repos/SaddleGeek/hello-world/compare/{base}...{head}",
+                        "merges_url": "https://api.github.com/repos/SaddleGeek/hello-world/merges",
+                        "archive_url": "https://api.github.com/repos/SaddleGeek/hello-world/{archive_format}{/ref}",
+                        "downloads_url": "https://api.github.com/repos/SaddleGeek/hello-world/downloads",
+                        "issues_url": "https://api.github.com/repos/SaddleGeek/hello-world/issues{/number}",
+                        "pulls_url": "https://api.github.com/repos/SaddleGeek/hello-world/pulls{/number}",
+                        "milestones_url": "https://api.github.com/repos/SaddleGeek/hello-world/milestones{/number}",
+                        "notifications_url": "https://api.github.com/repos/SaddleGeek/hello-world/notifications{?since,all,participating}",
+                        "labels_url": "https://api.github.com/repos/SaddleGeek/hello-world/labels{/name}",
+                        "releases_url": "https://api.github.com/repos/SaddleGeek/hello-world/releases{/id}",
+                        "deployments_url": "https://api.github.com/repos/SaddleGeek/hello-world/deployments",
+                        "created_at": "2018-03-22T20:17:17Z",
+                        "updated_at": "2018-03-22T20:17:20Z",
+                        "pushed_at": "2018-03-22T20:21:58Z",
+                        "git_url": "git://github.com/SaddleGeek/hello-world.git",
+                        "ssh_url": "git@github.com:SaddleGeek/hello-world.git",
+                        "clone_url": "https://github.com/SaddleGeek/hello-world.git",
+                        "svn_url": "https://github.com/SaddleGeek/hello-world",
+                        "homepage": null,
+                        "size": 0,
+                        "stargazers_count": 0,
+                        "watchers_count": 0,
+                        "language": null,
+                        "has_issues": true,
+                        "has_projects": true,
+                        "has_downloads": true,
+                        "has_wiki": true,
+                        "has_pages": false,
+                        "forks_count": 0,
+                        "mirror_url": null,
+                        "archived": false,
+                        "open_issues_count": 1,
+                        "license": null,
+                        "forks": 0,
+                        "open_issues": 1,
+                        "watchers": 0,
+                        "default_branch": "master"
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/1"
+                    },
+                    "html": {
+                        "href": "https://github.com/SaddleGeek/hello-world/pull/1"
+                    },
+                    "issue": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/issues/1"
+                    },
+                    "comments": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/issues/1/comments"
+                    },
+                    "review_comments": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/1/comments"
+                    },
+                    "review_comment": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/comments{/number}"
+                    },
+                    "commits": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/pulls/1/commits"
+                    },
+                    "statuses": {
+                        "href": "https://api.github.com/repos/SaddleGeek/hello-world/statuses/34acbe03812a637d4ba74cc2da2bf889ac8a8a56"
+                    }
+                },
+                "author_association": "OWNER",
+                "merged": false,
+                "mergeable": null,
+                "rebaseable": null,
+                "mergeable_state": "unknown",
+                "merged_by": null,
+                "comments": 0,
+                "review_comments": 0,
+                "maintainer_can_modify": false,
+                "commits": 1,
+                "additions": 1,
+                "deletions": 0,
+                "changed_files": 1
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730193",
+        "type": "PushEvent",
+        "actor": {
+            "id": 28811549,
+            "login": "gnherter",
+            "display_login": "gnherter",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gnherter",
+            "avatar_url": "https://avatars.githubusercontent.com/u/28811549?"
+        },
+        "repo": {
+            "id": 126218230,
+            "name": "gnherter/learn-you-haskell",
+            "url": "https://api.github.com/repos/gnherter/learn-you-haskell"
+        },
+        "payload": {
+            "push_id": 2425523883,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "cf0bff6ec381e6f9869c0ed66c5eda74e6ebcaf5",
+            "before": "51794927b7f6ed8eacc311955b1c8891a8f95e99",
+            "commits": [
+                {
+                    "sha": "cf0bff6ec381e6f9869c0ed66c5eda74e6ebcaf5",
+                    "author": {
+                        "email": "gnherter@gmail.com",
+                        "name": "Guilherme Herter"
+                    },
+                    "message": "Alterado o arquivo de introdução",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/gnherter/learn-you-haskell/commits/cf0bff6ec381e6f9869c0ed66c5eda74e6ebcaf5"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730190",
+        "type": "PushEvent",
+        "actor": {
+            "id": 30448773,
+            "login": "Josh-Stillman",
+            "display_login": "Josh-Stillman",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Josh-Stillman",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30448773?"
+        },
+        "repo": {
+            "id": 126391792,
+            "name": "Josh-Stillman/gradient-descent-data-science-pilot",
+            "url": "https://api.github.com/repos/Josh-Stillman/gradient-descent-data-science-pilot"
+        },
+        "payload": {
+            "push_id": 2425523798,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/wip",
+            "head": "dbe7c9c535b3bb162b71a2d09c494c4675aaea57",
+            "before": "ecb520c5d6b6a15970812114740aacfc1e91e02f",
+            "commits": [
+                {
+                    "sha": "dbe7c9c535b3bb162b71a2d09c494c4675aaea57",
+                    "author": {
+                        "email": "joshstillman@gmail.com",
+                        "name": "Josh Stillman"
+                    },
+                    "message": "automatically backed up by learn",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/Josh-Stillman/gradient-descent-data-science-pilot/commits/dbe7c9c535b3bb162b71a2d09c494c4675aaea57"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730184",
+        "type": "PushEvent",
+        "actor": {
+            "id": 35817940,
+            "login": "jacquelireg",
+            "display_login": "jacquelireg",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jacquelireg",
+            "avatar_url": "https://avatars.githubusercontent.com/u/35817940?"
+        },
+        "repo": {
+            "id": 124138802,
+            "name": "jacquelireg/jacquelireg.github.io",
+            "url": "https://api.github.com/repos/jacquelireg/jacquelireg.github.io"
+        },
+        "payload": {
+            "push_id": 2425523745,
+            "size": 2,
+            "distinct_size": 2,
+            "ref": "refs/heads/master",
+            "head": "f8f08b7909463aee7038bdbbbf1e9e95674384ac",
+            "before": "9bc240b5c7269b8d2a98a51c1bfc5e33de4174ff",
+            "commits": [
+                {
+                    "sha": "49484c9aa4a14a4ee7bd3571a59296dabb92cf4b",
+                    "author": {
+                        "email": "35817940+jacquelireg@users.noreply.github.com",
+                        "name": "jacquelireg"
+                    },
+                    "message": "changed title",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/jacquelireg/jacquelireg.github.io/commits/49484c9aa4a14a4ee7bd3571a59296dabb92cf4b"
+                },
+                {
+                    "sha": "f8f08b7909463aee7038bdbbbf1e9e95674384ac",
+                    "author": {
+                        "email": "35817940+jacquelireg@users.noreply.github.com",
+                        "name": "jacquelireg"
+                    },
+                    "message": "oops",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/jacquelireg/jacquelireg.github.io/commits/f8f08b7909463aee7038bdbbbf1e9e95674384ac"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730185",
+        "type": "DeleteEvent",
+        "actor": {
+            "id": 6399679,
+            "login": "MarcoFalke",
+            "display_login": "MarcoFalke",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MarcoFalke",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6399679?"
+        },
+        "repo": {
+            "id": 40046254,
+            "name": "MarcoFalke/bitcoin",
+            "url": "https://api.github.com/repos/MarcoFalke/bitcoin"
+        },
+        "payload": {
+            "ref": "Mf1802-rpcFundRawDeprecatedOption",
+            "ref_type": "branch",
+            "pusher_type": "user"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730178",
+        "type": "IssueCommentEvent",
+        "actor": {
+            "id": 9201481,
+            "login": "iambipinpaul",
+            "display_login": "iambipinpaul",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/iambipinpaul",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9201481?"
+        },
+        "repo": {
+            "id": 116160755,
+            "name": "aspnet/Blazor",
+            "url": "https://api.github.com/repos/aspnet/Blazor"
+        },
+        "payload": {
+            "action": "created",
+            "issue": {
+                "url": "https://api.github.com/repos/aspnet/Blazor/issues/16",
+                "repository_url": "https://api.github.com/repos/aspnet/Blazor",
+                "labels_url": "https://api.github.com/repos/aspnet/Blazor/issues/16/labels{/name}",
+                "comments_url": "https://api.github.com/repos/aspnet/Blazor/issues/16/comments",
+                "events_url": "https://api.github.com/repos/aspnet/Blazor/issues/16/events",
+                "html_url": "https://github.com/aspnet/Blazor/issues/16",
+                "id": 291647214,
+                "number": 16,
+                "title": "Publishing",
+                "user": {
+                    "login": "danroth27",
+                    "id": 1874516,
+                    "avatar_url": "https://avatars2.githubusercontent.com/u/1874516?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/danroth27",
+                    "html_url": "https://github.com/danroth27",
+                    "followers_url": "https://api.github.com/users/danroth27/followers",
+                    "following_url": "https://api.github.com/users/danroth27/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/danroth27/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/danroth27/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/danroth27/subscriptions",
+                    "organizations_url": "https://api.github.com/users/danroth27/orgs",
+                    "repos_url": "https://api.github.com/users/danroth27/repos",
+                    "events_url": "https://api.github.com/users/danroth27/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/danroth27/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "labels": [
+                    {
+                        "id": 794119641,
+                        "url": "https://api.github.com/repos/aspnet/Blazor/labels/3%20-%20Done",
+                        "name": "3 - Done",
+                        "color": "cccccc",
+                        "default": false
+                    },
+                    {
+                        "id": 794118845,
+                        "url": "https://api.github.com/repos/aspnet/Blazor/labels/enhancement",
+                        "name": "enhancement",
+                        "color": "84b6eb",
+                        "default": true
+                    }
+                ],
+                "state": "closed",
+                "locked": false,
+                "assignee": {
+                    "login": "SteveSandersonMS",
+                    "id": 1101362,
+                    "avatar_url": "https://avatars3.githubusercontent.com/u/1101362?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/SteveSandersonMS",
+                    "html_url": "https://github.com/SteveSandersonMS",
+                    "followers_url": "https://api.github.com/users/SteveSandersonMS/followers",
+                    "following_url": "https://api.github.com/users/SteveSandersonMS/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/SteveSandersonMS/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/SteveSandersonMS/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/SteveSandersonMS/subscriptions",
+                    "organizations_url": "https://api.github.com/users/SteveSandersonMS/orgs",
+                    "repos_url": "https://api.github.com/users/SteveSandersonMS/repos",
+                    "events_url": "https://api.github.com/users/SteveSandersonMS/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/SteveSandersonMS/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "assignees": [
+                    {
+                        "login": "SteveSandersonMS",
+                        "id": 1101362,
+                        "avatar_url": "https://avatars3.githubusercontent.com/u/1101362?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/SteveSandersonMS",
+                        "html_url": "https://github.com/SteveSandersonMS",
+                        "followers_url": "https://api.github.com/users/SteveSandersonMS/followers",
+                        "following_url": "https://api.github.com/users/SteveSandersonMS/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/SteveSandersonMS/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/SteveSandersonMS/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/SteveSandersonMS/subscriptions",
+                        "organizations_url": "https://api.github.com/users/SteveSandersonMS/orgs",
+                        "repos_url": "https://api.github.com/users/SteveSandersonMS/repos",
+                        "events_url": "https://api.github.com/users/SteveSandersonMS/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/SteveSandersonMS/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    }
+                ],
+                "milestone": {
+                    "url": "https://api.github.com/repos/aspnet/Blazor/milestones/1",
+                    "html_url": "https://github.com/aspnet/Blazor/milestone/1",
+                    "labels_url": "https://api.github.com/repos/aspnet/Blazor/milestones/1/labels",
+                    "id": 3064356,
+                    "number": 1,
+                    "title": "0.1.0",
+                    "description": "",
+                    "creator": {
+                        "login": "danroth27",
+                        "id": 1874516,
+                        "avatar_url": "https://avatars2.githubusercontent.com/u/1874516?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/danroth27",
+                        "html_url": "https://github.com/danroth27",
+                        "followers_url": "https://api.github.com/users/danroth27/followers",
+                        "following_url": "https://api.github.com/users/danroth27/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/danroth27/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/danroth27/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/danroth27/subscriptions",
+                        "organizations_url": "https://api.github.com/users/danroth27/orgs",
+                        "repos_url": "https://api.github.com/users/danroth27/repos",
+                        "events_url": "https://api.github.com/users/danroth27/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/danroth27/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "open_issues": 0,
+                    "closed_issues": 27,
+                    "state": "open",
+                    "created_at": "2018-01-25T17:03:20Z",
+                    "updated_at": "2018-03-21T21:15:04Z",
+                    "due_on": null,
+                    "closed_at": null
+                },
+                "comments": 4,
+                "created_at": "2018-01-25T17:13:00Z",
+                "updated_at": "2018-03-22T20:34:25Z",
+                "closed_at": "2018-03-14T11:43:48Z",
+                "author_association": "MEMBER",
+                "body": "- [ ] Support `dotnet publish` and produce a useful result for standalone apps\r\n- [ ] Support `dotnet publish` and produce a useful result when hosted in ASP.NET\r\n- [x] Linking (combining and stripping assemblies, eliminating facades)"
+            },
+            "comment": {
+                "url": "https://api.github.com/repos/aspnet/Blazor/issues/comments/375448349",
+                "html_url": "https://github.com/aspnet/Blazor/issues/16#issuecomment-375448349",
+                "issue_url": "https://api.github.com/repos/aspnet/Blazor/issues/16",
+                "id": 375448349,
+                "user": {
+                    "login": "iambipinpaul",
+                    "id": 9201481,
+                    "avatar_url": "https://avatars3.githubusercontent.com/u/9201481?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/iambipinpaul",
+                    "html_url": "https://github.com/iambipinpaul",
+                    "followers_url": "https://api.github.com/users/iambipinpaul/followers",
+                    "following_url": "https://api.github.com/users/iambipinpaul/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/iambipinpaul/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/iambipinpaul/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/iambipinpaul/subscriptions",
+                    "organizations_url": "https://api.github.com/users/iambipinpaul/orgs",
+                    "repos_url": "https://api.github.com/users/iambipinpaul/repos",
+                    "events_url": "https://api.github.com/users/iambipinpaul/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/iambipinpaul/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "created_at": "2018-03-22T20:34:25Z",
+                "updated_at": "2018-03-22T20:34:25Z",
+                "author_association": "NONE",
+                "body": "is there any extra tweak  we have to do or simply hosting all content of `dist` folder which will be get after running `dotnet publish` is enough?\r\n\r\nlet me try it again."
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 6476660,
+            "login": "aspnet",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/aspnet",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6476660?"
+        }
+    },
+    {
+        "id": "7421730180",
+        "type": "PullRequestEvent",
+        "actor": {
+            "id": 23717796,
+            "login": "depfu[bot]",
+            "display_login": "depfu",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/depfu[bot]",
+            "avatar_url": "https://avatars.githubusercontent.com/u/23717796?"
+        },
+        "repo": {
+            "id": 39559014,
+            "name": "hapiben/gemfly",
+            "url": "https://api.github.com/repos/hapiben/gemfly"
+        },
+        "payload": {
+            "action": "opened",
+            "number": 11,
+            "pull_request": {
+                "url": "https://api.github.com/repos/hapiben/gemfly/pulls/11",
+                "id": 176901651,
+                "html_url": "https://github.com/hapiben/gemfly/pull/11",
+                "diff_url": "https://github.com/hapiben/gemfly/pull/11.diff",
+                "patch_url": "https://github.com/hapiben/gemfly/pull/11.patch",
+                "issue_url": "https://api.github.com/repos/hapiben/gemfly/issues/11",
+                "number": 11,
+                "state": "open",
+                "locked": false,
+                "title": "🚨 [security] Update rails-html-sanitizer: 1.0.2 → 1.0.4 (patch)",
+                "user": {
+                    "login": "depfu[bot]",
+                    "id": 23717796,
+                    "avatar_url": "https://avatars3.githubusercontent.com/in/715?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/depfu%5Bbot%5D",
+                    "html_url": "https://github.com/apps/depfu",
+                    "followers_url": "https://api.github.com/users/depfu%5Bbot%5D/followers",
+                    "following_url": "https://api.github.com/users/depfu%5Bbot%5D/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/depfu%5Bbot%5D/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/depfu%5Bbot%5D/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/depfu%5Bbot%5D/subscriptions",
+                    "organizations_url": "https://api.github.com/users/depfu%5Bbot%5D/orgs",
+                    "repos_url": "https://api.github.com/users/depfu%5Bbot%5D/repos",
+                    "events_url": "https://api.github.com/users/depfu%5Bbot%5D/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/depfu%5Bbot%5D/received_events",
+                    "type": "Bot",
+                    "site_admin": false
+                },
+                "body": "---\n\n**Welcome to Depfu** 👋\n\nThis is one of the first three pull requests with dependency updates we've sent your way. We tried to start with a few easy patch-level updates. Hopefully your tests will pass and you can merge this pull request without too much risk. This should give you an idea how Depfu works in general.\n\nAfter you merge your first pull request, we'll send you a few more. We'll never open more than seven PRs at the same time so you're not getting overwhelmed with updates.\n\n[Let us know](mailto:hi@depfu.com) if you have any questions. Thanks so much for giving Depfu a try!\n\n---\n<details>\n<summary>⚠️ <b>No CI detected</b> ⚠️</summary>\n<p>You don't seem to have any Continuous Integration service set up!</p>\n\n<p>Without a service that will test the Depfu branches and pull requests, we can't inform you if incoming updates actually work with your app. We think that this degrades the\nservice we're trying to provide down to a point where it is more or less meaningless.</p>\n\n<p>This is fine if you just want to give Depfu a quick try. If you want to really let Depfu help you keep your app up-to-date, we recommend setting up a CI system:</p>\n\n * Our friends at [Travis-CI](https://travis-ci.com) provide excellent service.\n * [Circle CI](https://circleci.com) are good, too, and have a free plan that will cover basic needs.\n * If you use something like Jenkins, make sure that you're using the Github integration correctly so that it reports status data back to Github.\n * If you have already set up a CI for this repository, you might need to check your configuration. Make sure it will run on all new branches. If you don’t want it to run on every branch, you can whitelist branches starting with `depfu/`.\n\n<p>It might be necessary to once deactivate and reactivate your project in Depfu for the CI service to be properly detected.</p>\n<hr>\n</details>\n<br>\n\n<hr>\n\n🚨 <b>Your version of rails-html-sanitizer has known security vulnerabilities</b> 🚨\n\nAdvisory: CVE-2018-3741\nDisclosed: March 22, 2018\nURL: [https://github.com/rails/rails-html-sanitizer/commit/f3ba1a839a35f2ba7f941c15e239a1cb379d56ae](https://bounce.depfu.com/github.com/rails/rails-html-sanitizer/commit/f3ba1a839a35f2ba7f941c15e239a1cb379d56ae)\n\n<details>\n<summary>Possible XSS vulnerability in rails-html-sanitizer</summary>\n<blockquote>\n  \n</blockquote>\n</details>\n<br>\n🚨 <b>We recommend to merge and deploy this update as soon as possible!</b> 🚨\n<hr>\n\n\nWe've updated a dependency and here is what you need to know:\n\n| name | version specification | old version | new version |\n| --- | --- | --- | --- |\n| rails-html-sanitizer | _indirect dependency_ | 1.0.2 | 1.0.4 |\n\nAdditionally, the update changed a few other dependencies as well:\n\n| action | name | old version | new version |\n| --- | --- | --- | --- |\n| added | crass |  | 1.0.3 |\n| added | mini_portile2 |  | 2.1.0 |\n| removed | mini_portile | 0.6.2 | |\n| updated | loofah | 2.0.2 | 2.2.2 |\n| updated | nokogiri | 1.6.6.2 | 1.6.8.1 |\n\n\nYou should probably take a good look at the info here and the test results before merging this pull request, of course.\n\n### What changed?\n\n\n#### ↗️ rails-html-sanitizer (_indirect_, 1.0.2 → 1.0.4) · [Repo](https://github.com/rails/rails-html-sanitizer) · [Changelog](https://github.com/rails/rails-html-sanitizer/blob/master/CHANGELOG.md)\n\n<details>\n<summary>Release Notes</summary>\n<p>From the <a href=\"https://github.com/rails/rails-html-sanitizer/releases/tag/v1.0.4\">Github release</a>:</p>\n\n<ul>\n<li>Fix CVE-2018-3741.</li>\n</ul>\n</details>\n\n<details>\n<summary>Commits</summary>\n<p><a href=\"https://github.com/rails/rails-html-sanitizer/compare/4f0f7810fce6c8aa63de07a40d69d6027a30acaf...53bf066ac3a163546a9c7c44c30998c21068c42d\">See the full diff on Github</a>. The new version differs by 27 commits:</p>\n\n<ul>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/53bf066ac3a163546a9c7c44c30998c21068c42d\"><code>Prepare to 1.0.4 release</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/f3ba1a839a35f2ba7f941c15e239a1cb379d56ae\"><code>Make sure we address CVE-2018-8048</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/7aea595ed0c9887b09484cd46435d1af165f24ef\"><code>Remove rbx since it doesn&#39;t seem to install.</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/9057f426df717e92130630cf80215bbbce745cdc\"><code>Merge pull request #66 from fschwahn/improve-tests</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/2a2a715348522f12e9831b17f54ee286e464724e\"><code>Fix deprecation warning from Minitest</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/2e8a7063273015683ccfb7d76ca525382aabd840\"><code>Make tests pass again with recent nokogiri versions</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/267b12113a71ad0932f7b5ff6eb1f896554cffd4\"><code>Rename test to better reflect what is actually tested</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/663bf35d17cf35d0385861902362333a789cc642\"><code>typos</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/362f72d1b7a3e7375956ad6ff1d78e6a1b29c5fe\"><code>We&#39;re still testing against ruby 1.9 and 2.0 that aren&#39;t supported by nokogiri 1.7</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/1f8b16f133f190bff505a992d43eb677e31054fb\"><code>activesupport 5 doesn&#39;t support ruby &lt; 2.2.2 that are still tested in this repo</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/79884cdf5ae204775870f29de96ef6e954712592\"><code>bundle with the newest released bundler</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/13c29d01251f716104f23378b1176258446e9cb2\"><code>Test against newer released rubies</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/57d549defff0de7b2cccfd563a2967fc39f7a0f4\"><code>[ci skip] Remove faulty overrides in scrubber example.</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/f6d1156a33e6b9813f6c75313b8ca453e158140f\"><code>[ci skip] Change override method in PermitScrubber.</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/6025b501e46051ea22a00fb186277a7697a5ac7d\"><code>Merge pull request #47 from pvalena/patch-1</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/68fd038b6aa23203aa2114c5661214f8174469b3\"><code>Correct license filename</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/5c4354db7524b1df891df0a3e29877ce9f7575ca\"><code>bumping version</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/63903b0eaa6d2a4e1c91bc86008256c4c8335e78\"><code>convert CDATA nodes to TEXT nodes to avoid XSS issues</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/49dfc1584c5b8e35a4ffabf8356ba3df025e8d3f\"><code>Do not unescape already escaped HTML entities</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/297161e29a3e11186ce4c02bf7defc088bf544d4\"><code>Define a less permissive list of tags and attributes</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/bc771d15989f00525a2f0547e6b0ba007ea06449\"><code>Use the image hack name instead of the index</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/afa451ad250c24b63ce7d15bfeac0c01ff2bf5c8\"><code>Merge pull request #43 from maclover7/contributing</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/7a09522351832235bd2a88387709b4c24d574ed4\"><code>Add CONTRIBUTING.md [ci skip]</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/9cbceb1cb7a69e4a01ffb77c315994d4fba3a5d6\"><code>Merge pull request #40 from yui-knk/refactor/permit</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/4f88fa1712e1e6513aef19384ba2aa9fee6808ef\"><code>Refactor TargetScrubber</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/7cbe2d30af5c81fa2282bd453f7aa62dd943473b\"><code>Merge pull request #36 from JuanitoFatas/fix/gemspec</code></a></li>\n<li><a href=\"https://github.com/rails/rails-html-sanitizer/commit/633e029afc19700a39a3aac3706fee9487d1ff8b\"><code>Fix homepage uri in gemspec.</code></a></li>\n</ul>\n</details>\n\n\n\n#### ↗️ loofah (_indirect_, 2.0.2 → 2.2.2) · [Repo](http://github.com/flavorjones/loofah) · [Changelog](https://github.com/flavorjones/loofah/blob/master/CHANGELOG.md)\n\n<details>\n<summary>Release Notes</summary>\n<p>From the <a href=\"https://github.com/flavorjones/loofah/releases/tag/v2.2.2\">Github release</a>:</p>\n\n<h2>2.2.2 / 2018-03-22</h2>\n<p>Make public <code>Loofah::HTML5::Scrub.force_correct_attribute_escaping!</code>,<br>\nwhich was previously a private method. This is so that downstream gems<br>\n(like rails-html-sanitizer) can use this logic directly for their own<br>\nattribute scrubbers should they need to address CVE-2018-8048.</p>\n</details>\n\n<details>\n<summary>Commits</summary>\n<p><a href=\"https://github.com/flavorjones/loofah/compare/1e451b4104dc82f42b1358543c5a635ee9909c98...37af4ee08f9e9531e24287c2783a79d331fc9243\">See the full diff on Github</a>. The new version differs by more commits than we can show here.</p>\n</details>\n\n\n\n#### ↗️ nokogiri (_indirect_, 1.6.6.2 → 1.6.8.1) · [Repo](https://github.com/sparklemotion/nokogiri/) · [Changelog](https://github.com/sparklemotion/nokogiri/blob/master/CHANGELOG.md)\n\n\n<details>\n<summary>Commits</summary>\n<p><a href=\"https://github.com/sparklemotion/nokogiri/compare/1b1fcad8bd64ab70256666c38d2c998e86ade8c0...002e4d8481dcc15bbf23fb385cdf5ebfed892442\">See the full diff on Github</a>. The new version differs by more commits than we can show here.</p>\n</details>\n\n\n\n\n---\n[Depfu](https://depfu.com) will automatically keep this PR conflict-free, as long as you don't add any commits to this branch yourself. You can also trigger a rebase manually by commenting with `@depfu rebase`.\n\n![Depfu Status](https://depfu.com/badges/4225343e41b0ea80d8102a9e4feb68ac/stats.svg)\n\n",
+                "created_at": "2018-03-22T20:34:27Z",
+                "updated_at": "2018-03-22T20:34:27Z",
+                "closed_at": null,
+                "merged_at": null,
+                "merge_commit_sha": null,
+                "assignee": null,
+                "assignees": [],
+                "requested_reviewers": [],
+                "requested_teams": [],
+                "labels": [],
+                "milestone": null,
+                "commits_url": "https://api.github.com/repos/hapiben/gemfly/pulls/11/commits",
+                "review_comments_url": "https://api.github.com/repos/hapiben/gemfly/pulls/11/comments",
+                "review_comment_url": "https://api.github.com/repos/hapiben/gemfly/pulls/comments{/number}",
+                "comments_url": "https://api.github.com/repos/hapiben/gemfly/issues/11/comments",
+                "statuses_url": "https://api.github.com/repos/hapiben/gemfly/statuses/5e8ace0870435f32200cba07099b7c7435388186",
+                "head": {
+                    "label": "hapiben:depfu/update/rails-html-sanitizer-1.0.4",
+                    "ref": "depfu/update/rails-html-sanitizer-1.0.4",
+                    "sha": "5e8ace0870435f32200cba07099b7c7435388186",
+                    "user": {
+                        "login": "hapiben",
+                        "id": 118415,
+                        "avatar_url": "https://avatars1.githubusercontent.com/u/118415?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/hapiben",
+                        "html_url": "https://github.com/hapiben",
+                        "followers_url": "https://api.github.com/users/hapiben/followers",
+                        "following_url": "https://api.github.com/users/hapiben/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/hapiben/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/hapiben/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/hapiben/subscriptions",
+                        "organizations_url": "https://api.github.com/users/hapiben/orgs",
+                        "repos_url": "https://api.github.com/users/hapiben/repos",
+                        "events_url": "https://api.github.com/users/hapiben/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/hapiben/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "repo": {
+                        "id": 39559014,
+                        "name": "gemfly",
+                        "full_name": "hapiben/gemfly",
+                        "owner": {
+                            "login": "hapiben",
+                            "id": 118415,
+                            "avatar_url": "https://avatars1.githubusercontent.com/u/118415?v=4",
+                            "gravatar_id": "",
+                            "url": "https://api.github.com/users/hapiben",
+                            "html_url": "https://github.com/hapiben",
+                            "followers_url": "https://api.github.com/users/hapiben/followers",
+                            "following_url": "https://api.github.com/users/hapiben/following{/other_user}",
+                            "gists_url": "https://api.github.com/users/hapiben/gists{/gist_id}",
+                            "starred_url": "https://api.github.com/users/hapiben/starred{/owner}{/repo}",
+                            "subscriptions_url": "https://api.github.com/users/hapiben/subscriptions",
+                            "organizations_url": "https://api.github.com/users/hapiben/orgs",
+                            "repos_url": "https://api.github.com/users/hapiben/repos",
+                            "events_url": "https://api.github.com/users/hapiben/events{/privacy}",
+                            "received_events_url": "https://api.github.com/users/hapiben/received_events",
+                            "type": "User",
+                            "site_admin": false
+                        },
+                        "private": false,
+                        "html_url": "https://github.com/hapiben/gemfly",
+                        "description": "💎 Update your Gemfile gems",
+                        "fork": false,
+                        "url": "https://api.github.com/repos/hapiben/gemfly",
+                        "forks_url": "https://api.github.com/repos/hapiben/gemfly/forks",
+                        "keys_url": "https://api.github.com/repos/hapiben/gemfly/keys{/key_id}",
+                        "collaborators_url": "https://api.github.com/repos/hapiben/gemfly/collaborators{/collaborator}",
+                        "teams_url": "https://api.github.com/repos/hapiben/gemfly/teams",
+                        "hooks_url": "https://api.github.com/repos/hapiben/gemfly/hooks",
+                        "issue_events_url": "https://api.github.com/repos/hapiben/gemfly/issues/events{/number}",
+                        "events_url": "https://api.github.com/repos/hapiben/gemfly/events",
+                        "assignees_url": "https://api.github.com/repos/hapiben/gemfly/assignees{/user}",
+                        "branches_url": "https://api.github.com/repos/hapiben/gemfly/branches{/branch}",
+                        "tags_url": "https://api.github.com/repos/hapiben/gemfly/tags",
+                        "blobs_url": "https://api.github.com/repos/hapiben/gemfly/git/blobs{/sha}",
+                        "git_tags_url": "https://api.github.com/repos/hapiben/gemfly/git/tags{/sha}",
+                        "git_refs_url": "https://api.github.com/repos/hapiben/gemfly/git/refs{/sha}",
+                        "trees_url": "https://api.github.com/repos/hapiben/gemfly/git/trees{/sha}",
+                        "statuses_url": "https://api.github.com/repos/hapiben/gemfly/statuses/{sha}",
+                        "languages_url": "https://api.github.com/repos/hapiben/gemfly/languages",
+                        "stargazers_url": "https://api.github.com/repos/hapiben/gemfly/stargazers",
+                        "contributors_url": "https://api.github.com/repos/hapiben/gemfly/contributors",
+                        "subscribers_url": "https://api.github.com/repos/hapiben/gemfly/subscribers",
+                        "subscription_url": "https://api.github.com/repos/hapiben/gemfly/subscription",
+                        "commits_url": "https://api.github.com/repos/hapiben/gemfly/commits{/sha}",
+                        "git_commits_url": "https://api.github.com/repos/hapiben/gemfly/git/commits{/sha}",
+                        "comments_url": "https://api.github.com/repos/hapiben/gemfly/comments{/number}",
+                        "issue_comment_url": "https://api.github.com/repos/hapiben/gemfly/issues/comments{/number}",
+                        "contents_url": "https://api.github.com/repos/hapiben/gemfly/contents/{+path}",
+                        "compare_url": "https://api.github.com/repos/hapiben/gemfly/compare/{base}...{head}",
+                        "merges_url": "https://api.github.com/repos/hapiben/gemfly/merges",
+                        "archive_url": "https://api.github.com/repos/hapiben/gemfly/{archive_format}{/ref}",
+                        "downloads_url": "https://api.github.com/repos/hapiben/gemfly/downloads",
+                        "issues_url": "https://api.github.com/repos/hapiben/gemfly/issues{/number}",
+                        "pulls_url": "https://api.github.com/repos/hapiben/gemfly/pulls{/number}",
+                        "milestones_url": "https://api.github.com/repos/hapiben/gemfly/milestones{/number}",
+                        "notifications_url": "https://api.github.com/repos/hapiben/gemfly/notifications{?since,all,participating}",
+                        "labels_url": "https://api.github.com/repos/hapiben/gemfly/labels{/name}",
+                        "releases_url": "https://api.github.com/repos/hapiben/gemfly/releases{/id}",
+                        "deployments_url": "https://api.github.com/repos/hapiben/gemfly/deployments",
+                        "created_at": "2015-07-23T09:42:43Z",
+                        "updated_at": "2016-09-24T12:21:58Z",
+                        "pushed_at": "2018-03-22T20:34:18Z",
+                        "git_url": "git://github.com/hapiben/gemfly.git",
+                        "ssh_url": "git@github.com:hapiben/gemfly.git",
+                        "clone_url": "https://github.com/hapiben/gemfly.git",
+                        "svn_url": "https://github.com/hapiben/gemfly",
+                        "homepage": "http://gemfly.findings.co",
+                        "size": 79,
+                        "stargazers_count": 9,
+                        "watchers_count": 9,
+                        "language": "CSS",
+                        "has_issues": true,
+                        "has_projects": true,
+                        "has_downloads": true,
+                        "has_wiki": true,
+                        "has_pages": false,
+                        "forks_count": 3,
+                        "mirror_url": null,
+                        "archived": false,
+                        "open_issues_count": 5,
+                        "license": null,
+                        "forks": 3,
+                        "open_issues": 5,
+                        "watchers": 9,
+                        "default_branch": "master"
+                    }
+                },
+                "base": {
+                    "label": "hapiben:master",
+                    "ref": "master",
+                    "sha": "21f70df139312bc501ea00122e6fea0cc4d589d1",
+                    "user": {
+                        "login": "hapiben",
+                        "id": 118415,
+                        "avatar_url": "https://avatars1.githubusercontent.com/u/118415?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/hapiben",
+                        "html_url": "https://github.com/hapiben",
+                        "followers_url": "https://api.github.com/users/hapiben/followers",
+                        "following_url": "https://api.github.com/users/hapiben/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/hapiben/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/hapiben/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/hapiben/subscriptions",
+                        "organizations_url": "https://api.github.com/users/hapiben/orgs",
+                        "repos_url": "https://api.github.com/users/hapiben/repos",
+                        "events_url": "https://api.github.com/users/hapiben/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/hapiben/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "repo": {
+                        "id": 39559014,
+                        "name": "gemfly",
+                        "full_name": "hapiben/gemfly",
+                        "owner": {
+                            "login": "hapiben",
+                            "id": 118415,
+                            "avatar_url": "https://avatars1.githubusercontent.com/u/118415?v=4",
+                            "gravatar_id": "",
+                            "url": "https://api.github.com/users/hapiben",
+                            "html_url": "https://github.com/hapiben",
+                            "followers_url": "https://api.github.com/users/hapiben/followers",
+                            "following_url": "https://api.github.com/users/hapiben/following{/other_user}",
+                            "gists_url": "https://api.github.com/users/hapiben/gists{/gist_id}",
+                            "starred_url": "https://api.github.com/users/hapiben/starred{/owner}{/repo}",
+                            "subscriptions_url": "https://api.github.com/users/hapiben/subscriptions",
+                            "organizations_url": "https://api.github.com/users/hapiben/orgs",
+                            "repos_url": "https://api.github.com/users/hapiben/repos",
+                            "events_url": "https://api.github.com/users/hapiben/events{/privacy}",
+                            "received_events_url": "https://api.github.com/users/hapiben/received_events",
+                            "type": "User",
+                            "site_admin": false
+                        },
+                        "private": false,
+                        "html_url": "https://github.com/hapiben/gemfly",
+                        "description": "💎 Update your Gemfile gems",
+                        "fork": false,
+                        "url": "https://api.github.com/repos/hapiben/gemfly",
+                        "forks_url": "https://api.github.com/repos/hapiben/gemfly/forks",
+                        "keys_url": "https://api.github.com/repos/hapiben/gemfly/keys{/key_id}",
+                        "collaborators_url": "https://api.github.com/repos/hapiben/gemfly/collaborators{/collaborator}",
+                        "teams_url": "https://api.github.com/repos/hapiben/gemfly/teams",
+                        "hooks_url": "https://api.github.com/repos/hapiben/gemfly/hooks",
+                        "issue_events_url": "https://api.github.com/repos/hapiben/gemfly/issues/events{/number}",
+                        "events_url": "https://api.github.com/repos/hapiben/gemfly/events",
+                        "assignees_url": "https://api.github.com/repos/hapiben/gemfly/assignees{/user}",
+                        "branches_url": "https://api.github.com/repos/hapiben/gemfly/branches{/branch}",
+                        "tags_url": "https://api.github.com/repos/hapiben/gemfly/tags",
+                        "blobs_url": "https://api.github.com/repos/hapiben/gemfly/git/blobs{/sha}",
+                        "git_tags_url": "https://api.github.com/repos/hapiben/gemfly/git/tags{/sha}",
+                        "git_refs_url": "https://api.github.com/repos/hapiben/gemfly/git/refs{/sha}",
+                        "trees_url": "https://api.github.com/repos/hapiben/gemfly/git/trees{/sha}",
+                        "statuses_url": "https://api.github.com/repos/hapiben/gemfly/statuses/{sha}",
+                        "languages_url": "https://api.github.com/repos/hapiben/gemfly/languages",
+                        "stargazers_url": "https://api.github.com/repos/hapiben/gemfly/stargazers",
+                        "contributors_url": "https://api.github.com/repos/hapiben/gemfly/contributors",
+                        "subscribers_url": "https://api.github.com/repos/hapiben/gemfly/subscribers",
+                        "subscription_url": "https://api.github.com/repos/hapiben/gemfly/subscription",
+                        "commits_url": "https://api.github.com/repos/hapiben/gemfly/commits{/sha}",
+                        "git_commits_url": "https://api.github.com/repos/hapiben/gemfly/git/commits{/sha}",
+                        "comments_url": "https://api.github.com/repos/hapiben/gemfly/comments{/number}",
+                        "issue_comment_url": "https://api.github.com/repos/hapiben/gemfly/issues/comments{/number}",
+                        "contents_url": "https://api.github.com/repos/hapiben/gemfly/contents/{+path}",
+                        "compare_url": "https://api.github.com/repos/hapiben/gemfly/compare/{base}...{head}",
+                        "merges_url": "https://api.github.com/repos/hapiben/gemfly/merges",
+                        "archive_url": "https://api.github.com/repos/hapiben/gemfly/{archive_format}{/ref}",
+                        "downloads_url": "https://api.github.com/repos/hapiben/gemfly/downloads",
+                        "issues_url": "https://api.github.com/repos/hapiben/gemfly/issues{/number}",
+                        "pulls_url": "https://api.github.com/repos/hapiben/gemfly/pulls{/number}",
+                        "milestones_url": "https://api.github.com/repos/hapiben/gemfly/milestones{/number}",
+                        "notifications_url": "https://api.github.com/repos/hapiben/gemfly/notifications{?since,all,participating}",
+                        "labels_url": "https://api.github.com/repos/hapiben/gemfly/labels{/name}",
+                        "releases_url": "https://api.github.com/repos/hapiben/gemfly/releases{/id}",
+                        "deployments_url": "https://api.github.com/repos/hapiben/gemfly/deployments",
+                        "created_at": "2015-07-23T09:42:43Z",
+                        "updated_at": "2016-09-24T12:21:58Z",
+                        "pushed_at": "2018-03-22T20:34:18Z",
+                        "git_url": "git://github.com/hapiben/gemfly.git",
+                        "ssh_url": "git@github.com:hapiben/gemfly.git",
+                        "clone_url": "https://github.com/hapiben/gemfly.git",
+                        "svn_url": "https://github.com/hapiben/gemfly",
+                        "homepage": "http://gemfly.findings.co",
+                        "size": 79,
+                        "stargazers_count": 9,
+                        "watchers_count": 9,
+                        "language": "CSS",
+                        "has_issues": true,
+                        "has_projects": true,
+                        "has_downloads": true,
+                        "has_wiki": true,
+                        "has_pages": false,
+                        "forks_count": 3,
+                        "mirror_url": null,
+                        "archived": false,
+                        "open_issues_count": 5,
+                        "license": null,
+                        "forks": 3,
+                        "open_issues": 5,
+                        "watchers": 9,
+                        "default_branch": "master"
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/pulls/11"
+                    },
+                    "html": {
+                        "href": "https://github.com/hapiben/gemfly/pull/11"
+                    },
+                    "issue": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/issues/11"
+                    },
+                    "comments": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/issues/11/comments"
+                    },
+                    "review_comments": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/pulls/11/comments"
+                    },
+                    "review_comment": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/pulls/comments{/number}"
+                    },
+                    "commits": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/pulls/11/commits"
+                    },
+                    "statuses": {
+                        "href": "https://api.github.com/repos/hapiben/gemfly/statuses/5e8ace0870435f32200cba07099b7c7435388186"
+                    }
+                },
+                "author_association": "NONE",
+                "merged": false,
+                "mergeable": null,
+                "rebaseable": null,
+                "mergeable_state": "unknown",
+                "merged_by": null,
+                "comments": 0,
+                "review_comments": 0,
+                "maintainer_can_modify": false,
+                "commits": 1,
+                "additions": 8,
+                "deletions": 6,
+                "changed_files": 1
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730168",
+        "type": "CreateEvent",
+        "actor": {
+            "id": 28762106,
+            "login": "dipper-github-lhr-yul-sfo-icn",
+            "display_login": "dipper-github-lhr-yul-sfo-icn",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dipper-github-lhr-yul-sfo-icn",
+            "avatar_url": "https://avatars.githubusercontent.com/u/28762106?"
+        },
+        "repo": {
+            "id": 92620036,
+            "name": "dipper-github-lhr-yul-sfo-icn/test-python-sample",
+            "url": "https://api.github.com/repos/dipper-github-lhr-yul-sfo-icn/test-python-sample"
+        },
+        "payload": {
+            "ref": "canary-test-a8b3ebc0-fdae-4027-8789-7230f6564ac5",
+            "ref_type": "branch",
+            "master_branch": "master",
+            "description": null,
+            "pusher_type": "user"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730163",
+        "type": "PushEvent",
+        "actor": {
+            "id": 21325943,
+            "login": "markdibarry",
+            "display_login": "markdibarry",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/markdibarry",
+            "avatar_url": "https://avatars.githubusercontent.com/u/21325943?"
+        },
+        "repo": {
+            "id": 104781279,
+            "name": "markdibarry/portfolio",
+            "url": "https://api.github.com/repos/markdibarry/portfolio"
+        },
+        "payload": {
+            "push_id": 2425523743,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "d9a9e4948001ae2a5a1a94c0092652f356acbb1d",
+            "before": "42878a9856f8eacc024e3c987e4bb03c63a7b20e",
+            "commits": [
+                {
+                    "sha": "d9a9e4948001ae2a5a1a94c0092652f356acbb1d",
+                    "author": {
+                        "email": "markdibarry@gmail.com",
+                        "name": "markdibarry"
+                    },
+                    "message": "Add files via upload",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/markdibarry/portfolio/commits/d9a9e4948001ae2a5a1a94c0092652f356acbb1d"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730156",
+        "type": "PushEvent",
+        "actor": {
+            "id": 636610,
+            "login": "ryansb",
+            "display_login": "ryansb",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ryansb",
+            "avatar_url": "https://avatars.githubusercontent.com/u/636610?"
+        },
+        "repo": {
+            "id": 60099782,
+            "name": "s-hertel/ansible",
+            "url": "https://api.github.com/repos/s-hertel/ansible"
+        },
+        "payload": {
+            "push_id": 2425523831,
+            "size": 100,
+            "distinct_size": 4,
+            "ref": "refs/heads/vpc_endpoint_feature",
+            "head": "58f4bd305834db86efd22315afeaa52ece0b855f",
+            "before": "9d49f746093d308c56fe35637ad4c1b237e7f2d8",
+            "commits": [
+                {
+                    "sha": "93946ba627b105b5b0a973123b345faafd7822e6",
+                    "author": {
+                        "email": "sb@ryansb.com",
+                        "name": "Ryan Brown"
+                    },
+                    "message": "Use NormalizedOperationMethod to catch ClientErrors so the waiter can handle them properly (#37356)",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/93946ba627b105b5b0a973123b345faafd7822e6"
+                },
+                {
+                    "sha": "042ad70da05e7ddeda13d93565cfd278a722a3ce",
+                    "author": {
+                        "email": "felix@fontein.de",
+                        "name": "Felix Fontein"
+                    },
+                    "message": "Production ACME v2 endpoint is available. (#37369)",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/042ad70da05e7ddeda13d93565cfd278a722a3ce"
+                },
+                {
+                    "sha": "30bb70cf2d42e7d8fbae05a0a91e7dd12ee45b52",
+                    "author": {
+                        "email": "matt@mystile.com",
+                        "name": "Matt Clay"
+                    },
+                    "message": "Disable failing github_issue integration test.",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/30bb70cf2d42e7d8fbae05a0a91e7dd12ee45b52"
+                },
+                {
+                    "sha": "4378542ac7ff98fba4fe2c00eec99fbab8e93d1e",
+                    "author": {
+                        "email": "pierre-louis@libregerbil.fr",
+                        "name": "Pilou"
+                    },
+                    "message": " Connection error messages are unsafe: wrap them (#37329)\n\n* Check that connection error msg are not unsafe\r\n\r\n* Connection error messages are unsafe: wrap them\r\n\r\nFor example, in case of error, docker connection plugin returns exception\r\nmessage containing Go template. These messages weren't tagged as unsafe\r\nand were consequently rendered:\r\n\r\nThe conditional check 'result is failed' failed. The error was:\r\n{\r\n  'msg': u'Docker version check ([\\'/usr/bin/docker\\', \\'version\\', \\'--format\\', \"\\'{{.Server.Version}}\\'\"]) failed: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.35/version: dial unix /var/run/docker.sock: connect: permission denied\\n',\r\n  'failed': True\r\n}:\r\ntemplate error while templating string: unexpected '.'.\r\nString: Docker version check (['/usr/bin/docker', 'version', '--format', \"'{{.Server.Version}}'\"]) failed: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.35/version: dial unix /var/run/docker.sock: connect: permission denied",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/4378542ac7ff98fba4fe2c00eec99fbab8e93d1e"
+                },
+                {
+                    "sha": "841cb0e6a4d4c11b137075e4b16efd500c69b6cd",
+                    "author": {
+                        "email": "simon@purestorage.com",
+                        "name": "Simon Dodsley"
+                    },
+                    "message": "Add fact to obtain iSCSI initiator IQN",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/841cb0e6a4d4c11b137075e4b16efd500c69b6cd"
+                },
+                {
+                    "sha": "dd0140dfed55fe8e30699c5f976181f25513f005",
+                    "author": {
+                        "email": "ricardo.carrillo.cruz@gmail.com",
+                        "name": "Ricardo Carrillo Cruz"
+                    },
+                    "message": "Add a note to iosxr_(command|config|facts) stating netconf is not supported (#37394)",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/dd0140dfed55fe8e30699c5f976181f25513f005"
+                },
+                {
+                    "sha": "8c992ccbc7a60ad7d6e8ac4b6130ec01c8075303",
+                    "author": {
+                        "email": "pschiffe@redhat.com",
+                        "name": "Peter Schiffer"
+                    },
+                    "message": "Allow filtering of instances by tags in GCE dynamic inventory (#35770)\n\n* Allow filtering of instances by tags in GCE dynamic inventory\n\n* Optimize instance tags configuration\n\n* Fix for PEP8",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/8c992ccbc7a60ad7d6e8ac4b6130ec01c8075303"
+                },
+                {
+                    "sha": "ff15a9e7e28ca5dde6ffd20a3f4306e6d181722d",
+                    "author": {
+                        "email": "jjshoe@users.noreply.github.com",
+                        "name": "jjshoe"
+                    },
+                    "message": "Document that this module was renamed recently (#37420)",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/ff15a9e7e28ca5dde6ffd20a3f4306e6d181722d"
+                },
+                {
+                    "sha": "381359a8f89f503d668fe5144e230c2d1369b364",
+                    "author": {
+                        "email": "dharmabumstead@users.noreply.github.com",
+                        "name": "scottb"
+                    },
+                    "message": "Doc build warning/broken link clean-a-palooza (#37382)\n\n* Doc build warning/broken link clean-a-palooza, WIP commit 1.\r\n\r\n* Fixed broken anchor\r\n\r\n* Fixing additional broken links; converting from doc to ref.\r\n\r\n* Fix anchor",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/381359a8f89f503d668fe5144e230c2d1369b364"
+                },
+                {
+                    "sha": "0cf2ecbc6250d901c03c9eb3a7ba35e7a1abc430",
+                    "author": {
+                        "email": "robert@meinit.nl",
+                        "name": "Robert de Bock"
+                    },
+                    "message": "Update porting_guide_2.5.rst\n\nA fix to a minor typo. (\"Previouslu\" -> \"Previously\")\r\n\r\n label: docsite_pr",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/0cf2ecbc6250d901c03c9eb3a7ba35e7a1abc430"
+                },
+                {
+                    "sha": "4bba66e664b03e33bb48ee77158714cf25089446",
+                    "author": {
+                        "email": "Simon.Legner@gmail.com",
+                        "name": "Simon Legner"
+                    },
+                    "message": "doc: Update pscx examples (#37245)\n\n* win_chocolatey: replace pscx example\r\n\r\nPSCX is no longer distributed via Chocolatey: https://chocolatey.org/packages/pscx#comment-3762408157\r\n\r\n* win_unzip example: install psxc via win_psmodule",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/4bba66e664b03e33bb48ee77158714cf25089446"
+                },
+                {
+                    "sha": "c718c42df49bdf522b54785b32540d2cd87fec11",
+                    "author": {
+                        "email": "pierre-louis@libregerbil.fr",
+                        "name": "Pilou"
+                    },
+                    "message": "ansible_tower modules doc: fix typos, use formatting functions (#37414)\n\n* fix typos\r\n\r\n* use formatting functions\r\n\r\n* use 'job template' instead of 'job_template'\r\n\r\n* acronyms: user uppercase\r\n\r\n* become_enabled param is about privilege escalation",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/c718c42df49bdf522b54785b32540d2cd87fec11"
+                },
+                {
+                    "sha": "7328c942682c083b0471bc50e56e0bf1e8ff209e",
+                    "author": {
+                        "email": "1982589+tumbl3w33d@users.noreply.github.com",
+                        "name": "Benjamin"
+                    },
+                    "message": "Add turb as maven_artifact maintainer (#37424)\n\nand flag chrisisbeef as ignored, because he has been inactive for many months already.",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/7328c942682c083b0471bc50e56e0bf1e8ff209e"
+                },
+                {
+                    "sha": "dd37857884b4b7c6eb393135a1ceac725b60e6d6",
+                    "author": {
+                        "email": "trishnaguha17@gmail.com",
+                        "name": "Trishna Guha"
+                    },
+                    "message": "fix ios_l2_interface (#37389)\n\nSigned-off-by: Trishna Guha <trishnaguha17@gmail.com>",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/dd37857884b4b7c6eb393135a1ceac725b60e6d6"
+                },
+                {
+                    "sha": "a8487feb70316638a439c46385c233f4331b0a24",
+                    "author": {
+                        "email": "matt@mystile.com",
+                        "name": "Matt Clay"
+                    },
+                    "message": "Fix ansible-test python and pip executable search.",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/a8487feb70316638a439c46385c233f4331b0a24"
+                },
+                {
+                    "sha": "73512eeb7870c64da3fdf51b003e792db3fe5521",
+                    "author": {
+                        "email": "shnch.tmr@gmail.com",
+                        "name": "Shinichi TAMURA"
+                    },
+                    "message": "timezone module: allow suse linux as target (#36719)\n\n* timezone module: allow suse linux as target\n\n* use with statement for file handling",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/73512eeb7870c64da3fdf51b003e792db3fe5521"
+                },
+                {
+                    "sha": "71e85a45c17a9029a222f402227f4066c4947798",
+                    "author": {
+                        "email": "akasurde@redhat.com",
+                        "name": "Abhijeet Kasurde"
+                    },
+                    "message": "Add missing single quote in inventory_plugin doc (#37403)\n\nAdded missing single quote in inventory_plugin doc.\r\n\r\nSigned-off-by: Abhijeet Kasurde <akasurde@redhat.com>",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/71e85a45c17a9029a222f402227f4066c4947798"
+                },
+                {
+                    "sha": "5bdc8fe9f66d86cdd45c937bcac58cefc43860cb",
+                    "author": {
+                        "email": "a.badger@gmail.com",
+                        "name": "Toshio Kuratomi"
+                    },
+                    "message": "Clarify the apt module force documentation (#37353)\n\nThe force parameter is inherently insecure.  Be clearer in the\r\ndocumentation that this is the case.\r\n\r\nFixes #25242",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/5bdc8fe9f66d86cdd45c937bcac58cefc43860cb"
+                },
+                {
+                    "sha": "995f6c76899a7aef38fd5524aa0e5aaf4dd8e659",
+                    "author": {
+                        "email": "martin.krizek@gmail.com",
+                        "name": "Martin Krizek"
+                    },
+                    "message": "apt: clarify allow_unauthenticated docs (#37453)\n\n* apt: clarify allow_unauthenticated docs\r\n\r\n* Fix sanity check",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/995f6c76899a7aef38fd5524aa0e5aaf4dd8e659"
+                },
+                {
+                    "sha": "05b266cc667ada2cb56ad04c6428284e35fe3f3b",
+                    "author": {
+                        "email": "saichint@cisco.com",
+                        "name": "saichint"
+                    },
+                    "message": "fix nxos_udld issues (#37418)",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/s-hertel/ansible/commits/05b266cc667ada2cb56ad04c6428284e35fe3f3b"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730152",
+        "type": "WatchEvent",
+        "actor": {
+            "id": 4132009,
+            "login": "ahmgeek",
+            "display_login": "ahmgeek",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ahmgeek",
+            "avatar_url": "https://avatars.githubusercontent.com/u/4132009?"
+        },
+        "repo": {
+            "id": 77614310,
+            "name": "Microsoft/VoTT",
+            "url": "https://api.github.com/repos/Microsoft/VoTT"
+        },
+        "payload": {
+            "action": "started"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 6154722,
+            "login": "Microsoft",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/Microsoft",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6154722?"
+        }
+    },
+    {
+        "id": "7421730149",
+        "type": "CreateEvent",
+        "actor": {
+            "id": 37673080,
+            "login": "faiaz201n",
+            "display_login": "faiaz201n",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/faiaz201n",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37673080?"
+        },
+        "repo": {
+            "id": 126391977,
+            "name": "faiaz201n/one1",
+            "url": "https://api.github.com/repos/faiaz201n/one1"
+        },
+        "payload": {
+            "ref": null,
+            "ref_type": "repository",
+            "master_branch": "master",
+            "description": null,
+            "pusher_type": "user"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730134",
+        "type": "PushEvent",
+        "actor": {
+            "id": 56100,
+            "login": "kinlane",
+            "display_login": "kinlane",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kinlane",
+            "avatar_url": "https://avatars.githubusercontent.com/u/56100?"
+        },
+        "repo": {
+            "id": 124672309,
+            "name": "streamdata-gallery-organizations/azure-sql-database",
+            "url": "https://api.github.com/repos/streamdata-gallery-organizations/azure-sql-database"
+        },
+        "payload": {
+            "push_id": 2425523878,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "41fc862c78d448d4eccc41302a75d815cd94cdda",
+            "before": "1c368b33ec0e150b2193a0157f4658e8d6f67db2",
+            "commits": [
+                {
+                    "sha": "41fc862c78d448d4eccc41302a75d815cd94cdda",
+                    "author": {
+                        "email": "kinlane@gmail.com",
+                        "name": "Kin Lane"
+                    },
+                    "message": "Write File",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/streamdata-gallery-organizations/azure-sql-database/commits/41fc862c78d448d4eccc41302a75d815cd94cdda"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 37246269,
+            "login": "streamdata-gallery-organizations",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/streamdata-gallery-organizations",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37246269?"
+        }
+    },
+    {
+        "id": "7421730133",
+        "type": "IssueCommentEvent",
+        "actor": {
+            "id": 655154,
+            "login": "cgchoffman",
+            "display_login": "cgchoffman",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/cgchoffman",
+            "avatar_url": "https://avatars.githubusercontent.com/u/655154?"
+        },
+        "repo": {
+            "id": 11802259,
+            "name": "Komodo/KomodoEdit",
+            "url": "https://api.github.com/repos/Komodo/KomodoEdit"
+        },
+        "payload": {
+            "action": "created",
+            "issue": {
+                "url": "https://api.github.com/repos/Komodo/KomodoEdit/issues/3513",
+                "repository_url": "https://api.github.com/repos/Komodo/KomodoEdit",
+                "labels_url": "https://api.github.com/repos/Komodo/KomodoEdit/issues/3513/labels{/name}",
+                "comments_url": "https://api.github.com/repos/Komodo/KomodoEdit/issues/3513/comments",
+                "events_url": "https://api.github.com/repos/Komodo/KomodoEdit/issues/3513/events",
+                "html_url": "https://github.com/Komodo/KomodoEdit/issues/3513",
+                "id": 306970572,
+                "number": 3513,
+                "title": "Publishing no longer works",
+                "user": {
+                    "login": "codermjb",
+                    "id": 2577827,
+                    "avatar_url": "https://avatars2.githubusercontent.com/u/2577827?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/codermjb",
+                    "html_url": "https://github.com/codermjb",
+                    "followers_url": "https://api.github.com/users/codermjb/followers",
+                    "following_url": "https://api.github.com/users/codermjb/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/codermjb/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/codermjb/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/codermjb/subscriptions",
+                    "organizations_url": "https://api.github.com/users/codermjb/orgs",
+                    "repos_url": "https://api.github.com/users/codermjb/repos",
+                    "events_url": "https://api.github.com/users/codermjb/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/codermjb/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "labels": [
+                    {
+                        "id": 196360435,
+                        "url": "https://api.github.com/repos/Komodo/KomodoEdit/labels/Closed:%20Not%20Reproducible",
+                        "name": "Closed: Not Reproducible",
+                        "color": "cccccc",
+                        "default": false
+                    },
+                    {
+                        "id": 196803122,
+                        "url": "https://api.github.com/repos/Komodo/KomodoEdit/labels/Pending:%20Response",
+                        "name": "Pending: Response",
+                        "color": "fbca04",
+                        "default": false
+                    }
+                ],
+                "state": "open",
+                "locked": false,
+                "assignee": {
+                    "login": "cgchoffman",
+                    "id": 655154,
+                    "avatar_url": "https://avatars0.githubusercontent.com/u/655154?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/cgchoffman",
+                    "html_url": "https://github.com/cgchoffman",
+                    "followers_url": "https://api.github.com/users/cgchoffman/followers",
+                    "following_url": "https://api.github.com/users/cgchoffman/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/cgchoffman/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/cgchoffman/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/cgchoffman/subscriptions",
+                    "organizations_url": "https://api.github.com/users/cgchoffman/orgs",
+                    "repos_url": "https://api.github.com/users/cgchoffman/repos",
+                    "events_url": "https://api.github.com/users/cgchoffman/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/cgchoffman/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "assignees": [
+                    {
+                        "login": "cgchoffman",
+                        "id": 655154,
+                        "avatar_url": "https://avatars0.githubusercontent.com/u/655154?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/cgchoffman",
+                        "html_url": "https://github.com/cgchoffman",
+                        "followers_url": "https://api.github.com/users/cgchoffman/followers",
+                        "following_url": "https://api.github.com/users/cgchoffman/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/cgchoffman/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/cgchoffman/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/cgchoffman/subscriptions",
+                        "organizations_url": "https://api.github.com/users/cgchoffman/orgs",
+                        "repos_url": "https://api.github.com/users/cgchoffman/repos",
+                        "events_url": "https://api.github.com/users/cgchoffman/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/cgchoffman/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    }
+                ],
+                "milestone": {
+                    "url": "https://api.github.com/repos/Komodo/KomodoEdit/milestones/27",
+                    "html_url": "https://github.com/Komodo/KomodoEdit/milestone/27",
+                    "labels_url": "https://api.github.com/repos/Komodo/KomodoEdit/milestones/27/labels",
+                    "id": 2443876,
+                    "number": 27,
+                    "title": "11.x.x",
+                    "description": "Tasks that we would like to get to during the 11.x lifetime but don't belong on any immediate milestones",
+                    "creator": {
+                        "login": "Naatan",
+                        "id": 278649,
+                        "avatar_url": "https://avatars3.githubusercontent.com/u/278649?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/Naatan",
+                        "html_url": "https://github.com/Naatan",
+                        "followers_url": "https://api.github.com/users/Naatan/followers",
+                        "following_url": "https://api.github.com/users/Naatan/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/Naatan/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/Naatan/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/Naatan/subscriptions",
+                        "organizations_url": "https://api.github.com/users/Naatan/orgs",
+                        "repos_url": "https://api.github.com/users/Naatan/repos",
+                        "events_url": "https://api.github.com/users/Naatan/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/Naatan/received_events",
+                        "type": "User",
+                        "site_admin": false
+                    },
+                    "open_issues": 246,
+                    "closed_issues": 31,
+                    "state": "open",
+                    "created_at": "2017-04-07T18:15:48Z",
+                    "updated_at": "2018-03-22T19:07:58Z",
+                    "due_on": null,
+                    "closed_at": null
+                },
+                "comments": 15,
+                "created_at": "2018-03-20T17:42:56Z",
+                "updated_at": "2018-03-22T20:34:25Z",
+                "closed_at": null,
+                "author_association": "NONE",
+                "body": "<!--\r\nPlease fill out the requested fields to the best of your ability.\r\n\r\nSome general guidelines:\r\n\r\n - Context is important,  please include all steps you took to produce the issue.\r\n - Always use the github web interface to respond. Email responses get mangled and may include personal information.\r\n - Please be courteous. Toxic and obnoxious behavior will not be tolerated.\r\n - For general usage questions please refer to our forums: http://community.komodoide.com/\r\n-->\r\n\r\n### Short Summary\r\nWhenever you create a new project and then a new publishing, the cloud icon no longer appears and you can't publish files. Publishing is now broke.\r\n\r\n### Steps to Reproduce\r\nCreate a project, then create a publishing and map the folders, check upload files upon save.\r\n\r\n### Expected results\r\nCloud icon to show and to be able to upload files.\r\n\r\n### Actual results\r\nCan't upload files and no cloud icon.\r\n\r\n### Platform Information\r\n\r\n*Komodo Edit or IDE?* IDE\r\n*Komodo Version?* 11.0.2 Build 90813\r\n*Operating System (and version)?* Xubuntu 16.0.4.2 LTS\r\n\r\n### Additional Information\r\n\r\nSometimes if you delete the project file and the publishing, you can redo it and it works. Sometimes not, this time it does not and it does not work.\r\n \r\nNo Icon (and greyed out option for publishing): http://prntscr.com/itwoox\r\nConfigured correctly: http://prntscr.com/itwp4w\r\n"
+            },
+            "comment": {
+                "url": "https://api.github.com/repos/Komodo/KomodoEdit/issues/comments/375448347",
+                "html_url": "https://github.com/Komodo/KomodoEdit/issues/3513#issuecomment-375448347",
+                "issue_url": "https://api.github.com/repos/Komodo/KomodoEdit/issues/3513",
+                "id": 375448347,
+                "user": {
+                    "login": "cgchoffman",
+                    "id": 655154,
+                    "avatar_url": "https://avatars0.githubusercontent.com/u/655154?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/cgchoffman",
+                    "html_url": "https://github.com/cgchoffman",
+                    "followers_url": "https://api.github.com/users/cgchoffman/followers",
+                    "following_url": "https://api.github.com/users/cgchoffman/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/cgchoffman/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/cgchoffman/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/cgchoffman/subscriptions",
+                    "organizations_url": "https://api.github.com/users/cgchoffman/orgs",
+                    "repos_url": "https://api.github.com/users/cgchoffman/repos",
+                    "events_url": "https://api.github.com/users/cgchoffman/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/cgchoffman/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "created_at": "2018-03-22T20:34:25Z",
+                "updated_at": "2018-03-22T20:34:25Z",
+                "author_association": "MEMBER",
+                "body": "Wait a minute, this isn't that issue where you won't do an initiate sync because it takes too long is it?"
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 5132872,
+            "login": "Komodo",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/Komodo",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5132872?"
+        }
+    },
+    {
+        "id": "7421730126",
+        "type": "PushEvent",
+        "actor": {
+            "id": 1670905,
+            "login": "ZeroChaos-",
+            "display_login": "ZeroChaos-",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ZeroChaos-",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1670905?"
+        },
+        "repo": {
+            "id": 42543389,
+            "name": "pentoo/pentoo-installer",
+            "url": "https://api.github.com/repos/pentoo/pentoo-installer"
+        },
+        "payload": {
+            "push_id": 2425523789,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "2e7b56ac605e436169e1f762e77ec0f5a67c8a52",
+            "before": "ad436f089a8702bcab842b1f8d7fb53a8462162b",
+            "commits": [
+                {
+                    "sha": "2e7b56ac605e436169e1f762e77ec0f5a67c8a52",
+                    "author": {
+                        "email": "zerochaos@gentoo.org",
+                        "name": "Rick Farina (Zero_Chaos)"
+                    },
+                    "message": "mmc hack",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/pentoo/pentoo-installer/commits/2e7b56ac605e436169e1f762e77ec0f5a67c8a52"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 6411603,
+            "login": "pentoo",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/pentoo",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6411603?"
+        }
+    },
+    {
+        "id": "7421730128",
+        "type": "PushEvent",
+        "actor": {
+            "id": 1272089,
+            "login": "pr1ntr",
+            "display_login": "pr1ntr",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pr1ntr",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1272089?"
+        },
+        "repo": {
+            "id": 126235965,
+            "name": "pr1ntr/free-fall",
+            "url": "https://api.github.com/repos/pr1ntr/free-fall"
+        },
+        "payload": {
+            "push_id": 2425523741,
+            "size": 4,
+            "distinct_size": 4,
+            "ref": "refs/heads/deploy/develop",
+            "head": "adb4fbcfb67830e0f520068c502f99922034147f",
+            "before": "60a7525962be4c825de01b57c2be71483de3be59",
+            "commits": [
+                {
+                    "sha": "3307c89f5d772fcb3de978905a9daf843ec9c7d0",
+                    "author": {
+                        "email": "social@d4rklit3.com",
+                        "name": "Pavel"
+                    },
+                    "message": "player wip",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/pr1ntr/free-fall/commits/3307c89f5d772fcb3de978905a9daf843ec9c7d0"
+                },
+                {
+                    "sha": "acf7d234b1adacfab0a89c145256cb798d65490e",
+                    "author": {
+                        "email": "d4rklit3@gmail.com",
+                        "name": "Pavel Zagoskin"
+                    },
+                    "message": "update ignore",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/pr1ntr/free-fall/commits/acf7d234b1adacfab0a89c145256cb798d65490e"
+                },
+                {
+                    "sha": "49faa1a86f18bbd157460114f7d89c9ecd372546",
+                    "author": {
+                        "email": "d4rklit3@gmail.com",
+                        "name": "Pavel Zagoskin"
+                    },
+                    "message": "refactor assetloader",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/pr1ntr/free-fall/commits/49faa1a86f18bbd157460114f7d89c9ecd372546"
+                },
+                {
+                    "sha": "adb4fbcfb67830e0f520068c502f99922034147f",
+                    "author": {
+                        "email": "d4rklit3@gmail.com",
+                        "name": "Pavel Zagoskin"
+                    },
+                    "message": "some player controls",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/pr1ntr/free-fall/commits/adb4fbcfb67830e0f520068c502f99922034147f"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730123",
+        "type": "PushEvent",
+        "actor": {
+            "id": 24536689,
+            "login": "jchen316",
+            "display_login": "jchen316",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jchen316",
+            "avatar_url": "https://avatars.githubusercontent.com/u/24536689?"
+        },
+        "repo": {
+            "id": 125431787,
+            "name": "SuicideSquadron/SotM",
+            "url": "https://api.github.com/repos/SuicideSquadron/SotM"
+        },
+        "payload": {
+            "push_id": 2425523830,
+            "size": 2,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "0a445d4aa15be90de36b13ea46cb6ba3873326ba",
+            "before": "c63124a4a556b8860b9ba96620e3ffe2b3c5d868",
+            "commits": [
+                {
+                    "sha": "dc67892f2743a45bd2f475cc0bc443f75a159980",
+                    "author": {
+                        "email": "jarrettrportnoy@gmail.com",
+                        "name": "Jarrett Portnoy"
+                    },
+                    "message": "user object stored to redux when logging in or signing up",
+                    "distinct": false,
+                    "url": "https://api.github.com/repos/SuicideSquadron/SotM/commits/dc67892f2743a45bd2f475cc0bc443f75a159980"
+                },
+                {
+                    "sha": "0a445d4aa15be90de36b13ea46cb6ba3873326ba",
+                    "author": {
+                        "email": "jcdigital316@gmail.com",
+                        "name": "jchen316"
+                    },
+                    "message": "Merge pull request #30 from SuicideSquadron/stats\n\nuser object stored to redux when logging in or signing up",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/SuicideSquadron/SotM/commits/0a445d4aa15be90de36b13ea46cb6ba3873326ba"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 37350644,
+            "login": "SuicideSquadron",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/SuicideSquadron",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37350644?"
+        }
+    },
+    {
+        "id": "7421730122",
+        "type": "PushEvent",
+        "actor": {
+            "id": 14822020,
+            "login": "Walaryne",
+            "display_login": "Walaryne",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Walaryne",
+            "avatar_url": "https://avatars.githubusercontent.com/u/14822020?"
+        },
+        "repo": {
+            "id": 115675907,
+            "name": "Walaryne/JavaTextAdventureEngine",
+            "url": "https://api.github.com/repos/Walaryne/JavaTextAdventureEngine"
+        },
+        "payload": {
+            "push_id": 2425523740,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "80e56ecd7268b1d3e1f6b08b1d3e3b24b098b42a",
+            "before": "5e098911085e2b35226461cfc8eb2c0a34355591",
+            "commits": [
+                {
+                    "sha": "80e56ecd7268b1d3e1f6b08b1d3e3b24b098b42a",
+                    "author": {
+                        "email": "hazardoustheradioactive@gmail.com",
+                        "name": "Walaryne"
+                    },
+                    "message": "Updated the README with instructions for Windows users",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/Walaryne/JavaTextAdventureEngine/commits/80e56ecd7268b1d3e1f6b08b1d3e3b24b098b42a"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730120",
+        "type": "IssueCommentEvent",
+        "actor": {
+            "id": 3502975,
+            "login": "kescobo",
+            "display_login": "kescobo",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kescobo",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3502975?"
+        },
+        "repo": {
+            "id": 101340027,
+            "name": "BioJulia/Microbiome.jl",
+            "url": "https://api.github.com/repos/BioJulia/Microbiome.jl"
+        },
+        "payload": {
+            "action": "created",
+            "issue": {
+                "url": "https://api.github.com/repos/BioJulia/Microbiome.jl/issues/15",
+                "repository_url": "https://api.github.com/repos/BioJulia/Microbiome.jl",
+                "labels_url": "https://api.github.com/repos/BioJulia/Microbiome.jl/issues/15/labels{/name}",
+                "comments_url": "https://api.github.com/repos/BioJulia/Microbiome.jl/issues/15/comments",
+                "events_url": "https://api.github.com/repos/BioJulia/Microbiome.jl/issues/15/events",
+                "html_url": "https://github.com/BioJulia/Microbiome.jl/pull/15",
+                "id": 307014257,
+                "number": 15,
+                "title": "Begin transition to spatial ecology",
+                "user": {
+                    "login": "kescobo",
+                    "id": 3502975,
+                    "avatar_url": "https://avatars0.githubusercontent.com/u/3502975?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/kescobo",
+                    "html_url": "https://github.com/kescobo",
+                    "followers_url": "https://api.github.com/users/kescobo/followers",
+                    "following_url": "https://api.github.com/users/kescobo/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/kescobo/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/kescobo/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/kescobo/subscriptions",
+                    "organizations_url": "https://api.github.com/users/kescobo/orgs",
+                    "repos_url": "https://api.github.com/users/kescobo/repos",
+                    "events_url": "https://api.github.com/users/kescobo/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/kescobo/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "labels": [],
+                "state": "open",
+                "locked": false,
+                "assignee": null,
+                "assignees": [],
+                "milestone": null,
+                "comments": 2,
+                "created_at": "2018-03-20T19:51:44Z",
+                "updated_at": "2018-03-22T20:34:27Z",
+                "closed_at": null,
+                "author_association": "MEMBER",
+                "pull_request": {
+                    "url": "https://api.github.com/repos/BioJulia/Microbiome.jl/pulls/15",
+                    "html_url": "https://github.com/BioJulia/Microbiome.jl/pull/15",
+                    "diff_url": "https://github.com/BioJulia/Microbiome.jl/pull/15.diff",
+                    "patch_url": "https://github.com/BioJulia/Microbiome.jl/pull/15.patch"
+                },
+                "body": "@mkborregaard would love your feedback when you get the chance (can certainly wait until after presentation).\r\n\r\nMost changes are in `abundances.jl`, but it actually wasn't terribly hard to make the switch. I managed to get all the tests to pass and added some new ones. "
+            },
+            "comment": {
+                "url": "https://api.github.com/repos/BioJulia/Microbiome.jl/issues/comments/375448356",
+                "html_url": "https://github.com/BioJulia/Microbiome.jl/pull/15#issuecomment-375448356",
+                "issue_url": "https://api.github.com/repos/BioJulia/Microbiome.jl/issues/15",
+                "id": 375448356,
+                "user": {
+                    "login": "kescobo",
+                    "id": 3502975,
+                    "avatar_url": "https://avatars0.githubusercontent.com/u/3502975?v=4",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/kescobo",
+                    "html_url": "https://github.com/kescobo",
+                    "followers_url": "https://api.github.com/users/kescobo/followers",
+                    "following_url": "https://api.github.com/users/kescobo/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/kescobo/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/kescobo/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/kescobo/subscriptions",
+                    "organizations_url": "https://api.github.com/users/kescobo/orgs",
+                    "repos_url": "https://api.github.com/users/kescobo/repos",
+                    "events_url": "https://api.github.com/users/kescobo/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/kescobo/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "created_at": "2018-03-22T20:34:27Z",
+                "updated_at": "2018-03-22T20:34:27Z",
+                "author_association": "MEMBER",
+                "body": "@mkborregaard I think that addresses your comments. Any reason I shouldn't merge this?"
+            }
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z",
+        "org": {
+            "id": 6486271,
+            "login": "BioJulia",
+            "gravatar_id": "",
+            "url": "https://api.github.com/orgs/BioJulia",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6486271?"
+        }
+    },
+    {
+        "id": "7421730117",
+        "type": "PushEvent",
+        "actor": {
+            "id": 22180320,
+            "login": "hohlthing",
+            "display_login": "hohlthing",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hohlthing",
+            "avatar_url": "https://avatars.githubusercontent.com/u/22180320?"
+        },
+        "repo": {
+            "id": 126391329,
+            "name": "hohlthing/oo-email-parser-cb-000",
+            "url": "https://api.github.com/repos/hohlthing/oo-email-parser-cb-000"
+        },
+        "payload": {
+            "push_id": 2425523787,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/wip",
+            "head": "d84fa863a0a009da488a515be83d073f9f517bd8",
+            "before": "2f684dece93411b27a42dd6d66d115c70155254c",
+            "commits": [
+                {
+                    "sha": "d84fa863a0a009da488a515be83d073f9f517bd8",
+                    "author": {
+                        "email": "mhohl@rocketmail.com",
+                        "name": "michael hohl"
+                    },
+                    "message": "automatically backed up by learn",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/hohlthing/oo-email-parser-cb-000/commits/d84fa863a0a009da488a515be83d073f9f517bd8"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730115",
+        "type": "WatchEvent",
+        "actor": {
+            "id": 25019711,
+            "login": "derrickbeining",
+            "display_login": "derrickbeining",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/derrickbeining",
+            "avatar_url": "https://avatars.githubusercontent.com/u/25019711?"
+        },
+        "repo": {
+            "id": 74094930,
+            "name": "lelandrichardson/redux-pack",
+            "url": "https://api.github.com/repos/lelandrichardson/redux-pack"
+        },
+        "payload": {
+            "action": "started"
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    },
+    {
+        "id": "7421730111",
+        "type": "PushEvent",
+        "actor": {
+            "id": 30381292,
+            "login": "groov1234",
+            "display_login": "groov1234",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/groov1234",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30381292?"
+        },
+        "repo": {
+            "id": 125885772,
+            "name": "groov1234/back-end-project-week",
+            "url": "https://api.github.com/repos/groov1234/back-end-project-week"
+        },
+        "payload": {
+            "push_id": 2425523735,
+            "size": 1,
+            "distinct_size": 1,
+            "ref": "refs/heads/master",
+            "head": "bfcf6ff17b97716dfdf6430216c76908fde1b756",
+            "before": "d54577bb730a63b44d637a7c725b7028aa3a6671",
+            "commits": [
+                {
+                    "sha": "bfcf6ff17b97716dfdf6430216c76908fde1b756",
+                    "author": {
+                        "email": "c.groover@outlook.com",
+                        "name": "groov1234"
+                    },
+                    "message": "WiP new front-end",
+                    "distinct": true,
+                    "url": "https://api.github.com/repos/groov1234/back-end-project-week/commits/bfcf6ff17b97716dfdf6430216c76908fde1b756"
+                }
+            ]
+        },
+        "public": true,
+        "created_at": "2018-03-22T20:34:27Z"
+    }
+]

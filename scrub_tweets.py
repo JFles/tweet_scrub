@@ -1,6 +1,7 @@
 """
     Script: scrub_tweets.py
     Author: Jeremy Fleshman
+    Date: 03/22/2018
     Intent: Pull list of tweets for an associated user using Twitter's
              public API and store them locally for parsing/filtering.
             Filter tweets with specified keyword filters.
@@ -11,7 +12,8 @@
               for action via CLI/GUI?
 """
 # modules
-import requests 
+import requests # for making the API call
+import json # for parsing the JSON response
 
 ########
 # Steps
@@ -20,22 +22,26 @@ import requests
 # save response in a file (only {"Id": "Body"} needed? TBD)
 # process tweet bodies against a filter
 # save some ID of each filtered tweet (separate file?)
-# read in IDs from filtered list and delete/archive each (API call?)
-
-# (testing) open file and write to it
-# with open('scrap.txt', 'w') as f: # add 'w' to enable file write mode
-#     for i in range(5):
-#         f.write("test\n")
-#     print("text added to {}", f) # autocloses file at end of block
-
-# with open('scrap.txt') as f:
-#     READ_DATA = f.read()
-#     print("Reading data from {}:", f)
-#     print(READ_DATA)
+# read in IDs from filtered list and delete/archive each
 
 # call api
 # test code for 'requests'
-response = requests.get('https://httpbin.org/ip')
+# response = requests.get('https://httpbin.org/ip')
 
-print('Your IP is {0}'.format(response.json()['origin']))
+# print('Your IP is {0}'.format(response.json()['origin']))
 # print(response)
+
+# http://docs.python-requests.org/en/master/user/quickstart/
+response = requests.get('https://api.github.com/events')
+if response.ok:
+    print("successful reply from server")
+    # print(response.json())
+    with open('ghApiResp.json', 'w') as file:
+        try:
+            # file.write(response.json()) # fails - write() accepts str only
+            file.write(json.dumps(response.json())) # succeeds - parses and saves properly
+        except Exception as e:
+            print("~Error: ", e)
+        else:
+            print("Response saved successfully!")
+
