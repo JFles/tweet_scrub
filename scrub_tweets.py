@@ -38,7 +38,14 @@ import oauth2 # for authentication of API calls
     Twitter API:
         # oauth authentication
         https://developer.twitter.com/en/docs/basics/authentication/overview/oauth
+        https://developer.twitter.com/en/docs/basics/authentication/guides/authorizing-a-request
         https://developer.twitter.com/en/docs/basics/authentication/guides/single-user
+
+        # twitter app management
+        https://apps.twitter.com/
+        # implement 3-leg OAuth
+        https://developer.twitter.com/en/docs/basics/authentication/overview/3-legged-oauth
+        # 
 
         # timeline endpoint to retrieve user tweets
         https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
@@ -51,6 +58,17 @@ import oauth2 # for authentication of API calls
 
 # authenticate user
 # use oauth library? It's recommended as an oAuth library might be much more complicated
+"""
+    # oauth2 snippet for basic use to authenticate:
+    def oauth_req(url, key, secret, http_method="GET", post_body=””, http_headers=None):
+        consumer = oauth2.Consumer(key=CONSUMER_KEY, secret=CONSUMER_SECRET)
+        token = oauth2.Token(key=key, secret=secret)
+        client = oauth2.Client(consumer, token)
+        resp, content = client.request( url, method=http_method, body=post_body, headers=http_headers )
+        return content
+
+    home_timeline = oauth_req( 'https://api.twitter.com/1.1/statuses/home_timeline.json', 'abcdefg', 'hijklmnop' )
+"""
 
 # get tweets for user
 payload = {"screen_name": "jefles", "count": 2}
