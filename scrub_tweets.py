@@ -14,6 +14,7 @@
 # modules
 import requests # for making the API call
 import json # for parsing the JSON response
+import oauth2 # for authentication of API calls
 
 ########
 # Steps
@@ -33,9 +34,48 @@ import json # for parsing the JSON response
 
 # http://docs.python-requests.org/en/master/user/quickstart/
 
+"""
+    Twitter API:
+        # oauth authentication
+        https://developer.twitter.com/en/docs/basics/authentication/overview/oauth
+        https://developer.twitter.com/en/docs/basics/authentication/guides/single-user
+
+        # timeline endpoint to retrieve user tweets
+        https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
+        # timeline best practices
+        https://developer.twitter.com/en/docs/tweets/timelines/guides/working-with-timelines
+
+        # destroy using 'id'
+        https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-destroy-id
+"""
+
+# authenticate user
+# use oauth library? It's recommended as an oAuth library might be much more complicated
+
+# get tweets for user
+payload = {"screen_name": "jefles", "count": 2}
+response = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload)
+if response.ok:
+    print("successful reply from server")
+    # print(response.json())
+    with open('timelineApiResp.json', 'w') as file:
+        try:
+            # file.write(response.json()) # fails - write() accepts str only
+            file.write(json.dumps(response.json(), sort_keys=True, indent=4)) # succeeds - parses and saves properly
+            resp_obj = response.json()
+        except Exception as e: #TODO replace with proper exception (or add specific handler and keep this as a generic case?)
+            print("~Error: ", e)
+        else:
+            print("Response saved successfully!")
+else:
+    #TODO - Add proper error handling for non 200 response
+    print("wut in tarnation")
+
 # stitched together test API call for testing
 # TODO - Replace with Twitter API call to get list of tweets (Have to be authenticated)
 # TODO - Refactor call into a function
+"""
+# test code using sample public API
 response = requests.get('https://api.github.com/events')
 if response.ok:
     print("successful reply from server")
@@ -49,6 +89,7 @@ if response.ok:
             print("~Error: ", e)
         else:
             print("Response saved successfully!")
+"""
 
 # loop through a nested dictionary, compare against a list of keywords, add id for each offending tweet
 
@@ -67,6 +108,7 @@ print("Nested Key = {0} || Val = {1}".format(type(respObj[0]["id"]), respObj[0][
 # print(len(respObj))
 # print(respObj[0])
 
+"""
 filtered_id = []
 filtered_url = [] #TODO zip these together so they loop at the same time
 # count = 0
@@ -84,9 +126,9 @@ for resp_obj_dict in resp_obj:
             filtered_url.append(value["url"])
     # print("\n")
 
-print(len(filtered_id)
+print(len(filtered_id))
 print(len(filtered_url))
-
+"""
 
 # dictionary = {"a": 1, "b": 2, "c": "test"} # can be mixed types
 # print(dictionary["a"])
