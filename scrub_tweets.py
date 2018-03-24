@@ -14,7 +14,8 @@
 # modules
 import requests # for making the API call
 import json # for parsing the JSON response
-import oauth2 # for authentication of API calls
+# import oauth2 # for authentication of API calls
+from requests_oauthlib import OAuth1
 
 ########
 # Steps
@@ -57,22 +58,10 @@ import oauth2 # for authentication of API calls
 """
 
 # authenticate user
-# use oauth library? It's recommended as an oAuth library might be much more complicated
-"""
-    # oauth2 snippet for basic use to authenticate:
-    def oauth_req(url, key, secret, http_method="GET", post_body=””, http_headers=None):
-        consumer = oauth2.Consumer(key=CONSUMER_KEY, secret=CONSUMER_SECRET)
-        token = oauth2.Token(key=key, secret=secret)
-        client = oauth2.Client(consumer, token)
-        resp, content = client.request( url, method=http_method, body=post_body, headers=http_headers )
-        return content
-
-    home_timeline = oauth_req( 'https://api.twitter.com/1.1/statuses/home_timeline.json', 'abcdefg', 'hijklmnop' )
-"""
-
 # get tweets for user
 payload = {"screen_name": "jefles", "count": 2}
-response = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload)
+auth = OAuth1(APP_KEY, APP_SECRET, USER_OAUTH_TOKEN, USER_OAUTH_TOKEN_SECRET)
+response = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload, auth=auth)
 if response.ok:
     print("successful reply from server")
     # print(response.json())
