@@ -16,6 +16,7 @@ import requests # for making the API call
 import json # for parsing the JSON response
 # import oauth2 # for authentication of API calls
 from requests_oauthlib import OAuth1
+import config
 
 ########
 # Steps
@@ -60,7 +61,7 @@ from requests_oauthlib import OAuth1
 # authenticate user
 # get tweets for user
 payload = {"screen_name": "jefles", "count": 2}
-auth = OAuth1(APP_KEY, APP_SECRET, USER_OAUTH_TOKEN, USER_OAUTH_TOKEN_SECRET)
+auth = OAuth1(config.APP_KEY, config.APP_SECRET, config.USER_OAUTH_TOKEN, config.USER_OAUTH_TOKEN_SECRET)
 response = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload, auth=auth)
 if response.ok:
     print("successful reply from server")
