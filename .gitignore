@@ -105,4 +105,4 @@ scrap*
 .gitsecret/keys/random_seed
 keys
 config.py
-.json
+*.json
