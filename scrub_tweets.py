@@ -42,6 +42,7 @@ import config
         https://developer.twitter.com/en/docs/basics/authentication/overview/oauth
         https://developer.twitter.com/en/docs/basics/authentication/guides/authorizing-a-request
         https://developer.twitter.com/en/docs/basics/authentication/guides/single-user
+        http://requests-oauthlib.readthedocs.io/en/latest/oauth1_workflow.html
 
         # twitter app management
         https://apps.twitter.com/
@@ -57,6 +58,8 @@ import config
         # destroy using 'id'
         https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-destroy-id
 """
+
+# print("{0}\n{1}\n{2}\n{3}".format(config.APP_KEY, config.APP_SECRET, config.USER_OAUTH_TOKEN, config.USER_OAUTH_TOKEN_SECRET))
 
 # authenticate user
 # get tweets for user
@@ -116,7 +119,6 @@ print("Nested Key = {0} || Val = {1}".format(type(respObj[0]["id"]), respObj[0][
 # print(len(respObj))
 # print(respObj[0])
 
-"""
 filtered_id = []
 filtered_url = [] #TODO zip these together so they loop at the same time
 # count = 0
@@ -130,13 +132,15 @@ for resp_obj_dict in resp_obj:
         # print(value)
         if key == "id":
             filtered_id.append(value)
-        elif key == "org":
-            filtered_url.append(value["url"])
+        elif key == "text":
+            filtered_url.append(value)
     # print("\n")
 
-print(len(filtered_id))
-print(len(filtered_url))
-"""
+print(filtered_id)
+# print(len(filtered_id))
+print(filtered_url)
+# print(len(filtered_url))
+
 
 # dictionary = {"a": 1, "b": 2, "c": "test"} # can be mixed types
 # print(dictionary["a"])
