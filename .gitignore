@@ -102,3 +102,5 @@ ENV/
 
 # misc
 scrap*
+.gitsecret/keys/random_seed
+keys
